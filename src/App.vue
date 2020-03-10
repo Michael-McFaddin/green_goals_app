@@ -6,7 +6,8 @@
       <router-link v-if="!isLoggedIn()" to="/signup">Signup</router-link> |
       <router-link v-if="!isLoggedIn()" to="/login">Login</router-link> |
       <router-link v-if="isLoggedIn()" to="/logout">Logout</router-link> |
-      <router-link v-if="isLoggedIn()" to="/users/1">Account</router-link> |
+      <router-link v-if="isLoggedIn()" to="/users/:id">User Show</router-link> |
+      <router-link to="/posts">All Posts</router-link>  
       
 
     </div>
@@ -19,6 +20,7 @@
 
 <script>
 export default {
+
 
   methods: {
     isLoggedIn: function() {
