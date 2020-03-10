@@ -1,10 +1,12 @@
 <template>
-  <div class="user-show">
+  <div class="users-show">
     <h1>Hello {{ user.first_name }}!</h1>
-    <h3>{{ user.first_name }}</h3>
-    <h3>{{ user.last_name }}</h3>
-    <h3>{{ user.user_name }}</h3>
-    <h3>{{ user.email }}</h3>
+    <h3>{{ user.first_name }} {{ user.last_name }}</h3>
+    <h3>User Name: {{ user.user_name }}</h3>
+    <h3>Email: {{ user.email }}</h3>
+
+    <router-link v-bind:to="`/users/${user.id}/edit`">Edit User</router-link>
+
   </div>
 </template>
 
@@ -17,7 +19,6 @@ import axios from 'axios';
 export default {
   data: function() {
     return {
-      message: "User Show!",
       user: {}
     };
   },
@@ -25,7 +26,7 @@ export default {
 
   created: function() {
     axios
-      .get(`/api/users/${"user_id"}`)
+      .get(`/api/users/${this.$route.params.id}`)
       .then(response => {
         console.log(response.data);
         this.user = response.data;
