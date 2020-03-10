@@ -3,10 +3,12 @@
 
     <h1>All Posts</h1>
     <div v-for="post in posts">
-      <h2>{{ post.category_name }}</h2>
-      <h3>{{ post.title }}</h3>
+      <h2>{{ post.title }}</h2>
+      <h3>{{ post.category_name }}</h3>
+      <h4>{{ post.user_name }}</h4>
       <p>{{ post.body }}</p>
-      <img v-bind:src="post.image" alt=""><br><br>
+      <img v-bind:src="post.image" alt=""><br>
+      <router-link v-bind:to="`/posts/${post.id}`">Details</router-link><br><br>
     </div>
 
   </div>
@@ -32,8 +34,8 @@ export default {
     axios
       .get("/api/posts")
       .then(response => {
-        this.posts = response.data
-      })
+        this.posts = response.data;
+      });
   },
 
   methods: {}
