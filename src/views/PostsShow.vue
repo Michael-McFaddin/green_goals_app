@@ -34,6 +34,7 @@ export default {
       .get("api/posts/" + this.$route.params.id)
       .then(response => {
         this.post = response.data;
+        console.log(response.data);
       });
   },
 

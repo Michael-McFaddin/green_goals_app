@@ -35,6 +35,7 @@ export default {
       .get("/api/posts")
       .then(response => {
         this.posts = response.data;
+        console.log(response.data);
       });
   },
 

@@ -8,6 +8,7 @@ import Logout from "../views/Logout.vue";
 import UsersShow from "../views/UsersShow.vue";
 import UsersEdit from "../views/UsersEdit.vue";
 import PostsIndex from "../views/PostsIndex.vue";
+import PostsNew from "../views/PostsNew.vue";
 import PostsShow from "../views/PostsShow.vue";
 
 Vue.use(VueRouter);
@@ -52,6 +53,11 @@ const routes = [
     path: '/posts',
     name: 'posts-index',
     component: PostsIndex
+  },
+  {
+    path: '/posts/new',
+    name: 'posts-new',
+    component: PostsNew
   },
   {
     path: '/posts/:id',
