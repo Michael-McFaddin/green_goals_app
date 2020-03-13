@@ -79,7 +79,7 @@ export default {
       axios
         .delete(`/api/users/${this.user.id}`)
         .then(response => {
-          this.$router.push("/");
+          this.$router.push("/logout");
         });
     }
   }

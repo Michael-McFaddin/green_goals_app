@@ -3,9 +3,11 @@
     
     <h1>{{ message }}</h1>
     <div v-for="favorite in favorites">
-      <h4>{{favorite}}</h4>
-      <h2>{{favorite.post.title}}</h2>
-      <img :src="favorite.post.image" alt="">
+      <!-- <h4>{{favorite}}</h4> -->
+      <h2>{{ favorite.post.title }}</h2>
+      <h3>{{ favorite.post.user_name }}</h3>
+      <p>{{ favorite.post.body }}</p>
+      <img :src="favorite.post.image" alt=""><br><br>
     </div>
 
 
