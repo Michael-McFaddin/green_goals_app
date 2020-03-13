@@ -2,6 +2,7 @@
   <div class="posts-show">
 
     <h1>Post Show</h1>
+
     <div>
       <h3>{{ post.title }}</h3>
       <h4>{{ post.user_name }}</h4>
@@ -9,6 +10,7 @@
         <div v-for="image in post.images">
           <img v-bind:src="image.url" alt="">
         </div>
+        <router-link v-bind:to="`/posts/${post.id}/edit`">Edit Post</router-link>
       
     </div>
 

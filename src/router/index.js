@@ -10,6 +10,7 @@ import UsersEdit from "../views/UsersEdit.vue";
 import PostsIndex from "../views/PostsIndex.vue";
 import PostsNew from "../views/PostsNew.vue";
 import PostsShow from "../views/PostsShow.vue";
+import PostsEdit from "../views/PostsEdit";
 import CategoriesIndex from "../views/CategoriesIndex";
 import CategoriesShow from "../views/CategoriesShow";
 import FavoritesIndex from "../views/FavoritesIndex";
@@ -66,6 +67,11 @@ const routes = [
     path: '/posts/:id',
     name: 'posts-show',
     component: PostsShow
+  },
+  {
+    path: '/posts/:id/edit',
+    name: 'posts-edit',
+    component: PostsEdit
   },
   {
     path: '/categories',
