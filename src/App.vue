@@ -8,8 +8,9 @@
       <router-link v-if="isLoggedIn()" to="/logout">Logout</router-link> |
       <router-link v-if="isLoggedIn()" to="/users/:id">User Show</router-link> |
       <router-link to="/posts">All Posts</router-link> |
-      <router-link to="/posts/new">New Posts</router-link> |
-      
+      <router-link v-if="isLoggedIn()" to="/posts/new">New Posts</router-link> |
+      <router-link to="/categories">Categories</router-link> |      
+      <router-link v-if="isLoggedIn()" to="/favorites">Favorites</router-link>       
 
     </div>
     <router-view/>

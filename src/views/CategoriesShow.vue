@@ -1,0 +1,40 @@
+<template>
+  <div class="categories-show">
+
+    <h1>{{ message }}</h1>
+    <div v-for="post in category.posts">
+      <h2>{{ post.title }}</h2>
+      <img :src="post.image" alt=""><br>
+      <router-link v-bind:to="`/posts/${post.id}`">Details</router-link><br><br>
+    </div>
+ 
+
+  </div>
+</template>
+
+<style>
+</style>
+
+<script>
+import axios from 'axios';
+
+export default {
+  data: function() {
+    return {
+      message: "Categories Show",
+      category: {},
+      posts: []
+    };
+  },
+
+  created: function() {
+    axios
+      .get(`/api/categories/${this.$route.params.id}`)
+      .then(response => {
+        this.category = response.data;
+      });
+  },
+
+  methods: {}
+};
+</script>

@@ -10,6 +10,9 @@ import UsersEdit from "../views/UsersEdit.vue";
 import PostsIndex from "../views/PostsIndex.vue";
 import PostsNew from "../views/PostsNew.vue";
 import PostsShow from "../views/PostsShow.vue";
+import CategoriesIndex from "../views/CategoriesIndex";
+import CategoriesShow from "../views/CategoriesShow";
+import FavoritesIndex from "../views/FavoritesIndex";
 
 Vue.use(VueRouter);
 
@@ -63,6 +66,21 @@ const routes = [
     path: '/posts/:id',
     name: 'posts-show',
     component: PostsShow
+  },
+  {
+    path: '/categories',
+    name: 'categories-index',
+    component: CategoriesIndex
+  },
+  {
+    path: '/categories/:id',
+    name: 'categories-show',
+    component: CategoriesShow
+  },
+  {
+    path: '/favorites',
+    name: 'favorites-index',
+    component: FavoritesIndex
   }
 ];
 
