@@ -4,8 +4,27 @@
     <h1>Posts Edit</h1>
     <div class="container">
       <form v-on:submit.prevent="updatePost(post)">
-        
+        <ul>
+          <li v-for="error in errors">{{ error }}</li>
+        </ul>
+        <div>
+          <label>Title:</label>
+          <input type="text" v-model="post.title">
+        </div>
+        <div>
+          <label>Body:</label>
+          <input type="text" v-model="post.body">
+        </div>
+        <div>
+          <label>Category:</label>
+          <input type="text" v-model="post.category_id">
+        </div>
+        <button click="submit">Update</button>
       </form>
+    </div>
+
+    <div>
+      <button v-on:click="destroyPost()">Delete Post</button>
     </div>
 
   </div>
@@ -48,6 +67,13 @@ export default {
         })
         .catch(error => {
           this.errors = error.response.data.errors;
+        });
+    },
+    destroyPost: function() {
+      axios
+        .delete(`/api/posts/${this.post.id}`)
+        .then(response => {
+          this.$router.push("/posts");
         });
     }
   }

@@ -4,6 +4,8 @@
     <h1>{{ message }}</h1>
     <div v-for="post in category.posts">
       <h2>{{ post.title }}</h2>
+      <h4>{{ post.user_name }}</h4>
+      <p>{{ post.body }}</p>
       <img :src="post.image" alt=""><br>
       <router-link v-bind:to="`/posts/${post.id}`">Details</router-link><br><br>
     </div>

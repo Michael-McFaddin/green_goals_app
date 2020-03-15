@@ -10,7 +10,7 @@
         <div v-for="image in post.images">
           <img v-bind:src="image.url" alt="">
         </div>
-        <router-link v-bind:to="`/posts/${post.id}/edit`">Edit Post</router-link>
+        <router-link v-if="post.user_id == $parent.getUserId()" v-bind:to="`/posts/${post.id}/edit`">Edit Post</router-link>
       
     </div>
 

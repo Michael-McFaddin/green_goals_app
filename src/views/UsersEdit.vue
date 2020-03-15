@@ -23,7 +23,16 @@
           <label>User Name: </label>
           <input type="text" v-model="user.user_name">
         </div>
-        <button v-on:click="updateUser(user)">Update</button>
+        <div>
+          <label>Password: </label>
+          <input type="text" v-model="password">
+        </div>
+        <div>
+          <label>Password Confirmation: </label>
+          <input type="text" v-model="password_confirmation"><br>
+          <small v-if="password !== password_confirmation" class="warning">Does not match Password</small>
+        </div>
+        <button click="submit">Update</button>
       </form>
     </div>
 
@@ -35,6 +44,9 @@
 </template>
 
 <style>
+.warning {
+  color: red;
+}
 </style>
 
 <script>
@@ -44,6 +56,8 @@ export default {
   data: function() {
     return {
       user: {},
+      password: "",
+      password_confirmation: "",
       errors: []
     };
   },
@@ -64,7 +78,9 @@ export default {
         first_name: user.first_name,
         last_name: user.last_name,
         email: user.email,
-        user_name: user.user_name
+        user_name: user.user_name,
+        password: this.password,
+        password_confirmation: this.password_confirmation
       };
       axios
         .patch(`api/users/${this.user.id}`, params)
