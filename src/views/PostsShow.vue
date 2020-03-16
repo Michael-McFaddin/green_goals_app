@@ -10,7 +10,8 @@
         <div v-for="image in post.images">
           <img v-bind:src="image.url" alt="">
         </div>
-        <router-link v-if="post.user_id == $parent.getUserId()" v-bind:to="`/posts/${post.id}/edit`">Edit Post</router-link>
+        <router-link v-if="post.user_id == $parent.getUserId()" v-bind:to="`/posts/${post.id}/edit`">Edit Post</router-link><br><br>
+        <button v-on:click="createFavorite()">Favorite</button>
       
     </div>
 
@@ -27,7 +28,8 @@ export default {
   data: function() {
     return {
       post: {},
-      images: []
+      images: [],
+      favorites: []
     };
   },
 
@@ -40,6 +42,17 @@ export default {
       });
   },
 
-  methods: {}
+  methods: {
+    createFavorite: function() {
+      var params = {
+        post_id: this.post.id
+      };
+      axios
+        .post("/api/favorites", params)
+        .then(response => {
+          console.log("You Favorited this post.");
+        });
+    }
+  }
 };
 </script>

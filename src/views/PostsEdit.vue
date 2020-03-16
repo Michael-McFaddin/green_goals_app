@@ -17,9 +17,12 @@
         </div>
         <div>
           <label>Category:</label>
-          <input type="text" v-model="post.category_id">
+          <input type="text" v-model="post.category_id"><br><br>
         </div>
-        <button click="submit">Update</button>
+        <div>
+         {{ post.images }}<br><br>
+        </div>
+        <button click="submit">Update</button><br><br>
       </form>
     </div>
 

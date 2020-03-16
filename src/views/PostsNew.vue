@@ -86,14 +86,7 @@ export default {
           console.log(error.response);
           this.errors = error.response.data.errors;
         });
-    },
-    // createImage: function() {
-    //   var params = {
-    //     url: this.newImageUrl
-    //   };
-    //   axios
-    //     .post("/api/images", params);
-    // }
+    }
   }
 };
 </script>
