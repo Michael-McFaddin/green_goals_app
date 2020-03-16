@@ -17,7 +17,7 @@
         </div>
          <div>
           <label>Body:</label>
-          <input type="text" v-model="newBody">
+          <textarea v-model="newBody" name="" id="" cols="30" rows="10"></textarea>
         </div>
          <div>
           <label>Image Url 1:</label>

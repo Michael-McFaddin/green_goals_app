@@ -3,7 +3,7 @@
 
     <h1>Posts Edit</h1>
     <div class="container">
-      <form v-on:submit.prevent="updatePost(post)">
+      <form v-on:submit.prevent="updatePost()">
         <ul>
           <li v-for="error in errors">{{ error }}</li>
         </ul>
@@ -13,23 +13,36 @@
         </div>
         <div>
           <label>Body:</label>
-          <input type="text" v-model="post.body">
+          <textarea v-model="post.body" name="" id="" cols="30" rows="10"></textarea>
         </div>
         <div>
           <label>Category:</label>
           <input type="text" v-model="post.category_id"><br><br>
         </div>
+        <button type="submit">Update</button><br>
+      </form>
+    </div>
+    <div>
+      <button v-on:click="destroyPost()">Delete Post</button><br><br>
+    </div>
+
+
+    <div>
+      <form v-on:submit.prevent="createImage()">
         <div>
-         {{ post.images }}<br><br>
+          <label>Image Url:</label>
+          <input type="text" v-model="newImageUrl">
         </div>
-        <button click="submit">Update</button><br><br>
+        <button type="submit">Add Image</button><br><br>
       </form>
     </div>
 
-    <div>
-      <button v-on:click="destroyPost()">Delete Post</button>
+    <div v-for="image in post.images">
+      <img :src="image.url" alt=""><br>
+      <button v-on:click="destroyImage(image)">Remove</button>
     </div>
-
+    
+    
   </div>
 </template>
 
@@ -43,7 +56,8 @@ export default {
   data: function() {
     return {
       post: {},
-      errors: []
+      errors: [],
+      newImageUrl: ""
     };
   },
 
@@ -57,11 +71,11 @@ export default {
   },
 
   methods: {
-    updatePost: function(post) {
+    updatePost: function() {
       var params = {
-        title: post.title,
-        body: post.body,
-        category_id: post.category_id
+        title: this.post.title,
+        body: this.post.body,
+        category_id: this.post.category_id
       };
       axios
         .patch(`/api/posts/${this.post.id}`, params)
@@ -77,6 +91,26 @@ export default {
         .delete(`/api/posts/${this.post.id}`)
         .then(response => {
           this.$router.push("/posts");
+        });
+    },
+    destroyImage: function(image) {
+      axios
+        .delete(`/api/images/${image.id}`)
+        .then(response => {
+          var index = this.post.images.indexOf(image);
+          this.post.images.splice(index, 1);
+        });
+    },
+    createImage: function() {
+      var params = {
+        url: this.newImageUrl,
+        post_id: this.post.id
+      };
+      axios
+        .post("/api/images", params)
+        .then(response => {
+          this.post.images.push(response.data);
+          this.newImageUrl = "";
         });
     }
   }

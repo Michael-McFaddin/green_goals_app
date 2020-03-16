@@ -11,8 +11,12 @@
           <img v-bind:src="image.url" alt="">
         </div>
         <router-link v-if="post.user_id == $parent.getUserId()" v-bind:to="`/posts/${post.id}/edit`">Edit Post</router-link><br><br>
-        <button v-on:click="createFavorite()">Favorite</button>
-      
+        <button v-if="!post.favorite" v-on:click="createFavorite()">Favorite</button>
+        <button v-if="post.favorite" v-on:click="destroyFavorite()">UnFavorite</button>
+    </div>
+
+    <div>
+      <p>{{ post.favorite_id }}</p>
     </div>
 
   </div>
@@ -28,8 +32,6 @@ export default {
   data: function() {
     return {
       post: {},
-      images: [],
-      favorites: []
     };
   },
 
@@ -51,8 +53,11 @@ export default {
         .post("/api/favorites", params)
         .then(response => {
           console.log("You Favorited this post.");
+          this.post.favorite = true;
         });
     }
-  }
+  },
+  //put destroyFavorites here
+// this.post.favorite = false
 };
 </script>
