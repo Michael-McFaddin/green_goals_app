@@ -29,12 +29,19 @@
         <div class="form-group">
           <label>Password confirmation:</label>
           <input type="password" class="form-control" v-model="passwordConfirmation">
+          <small v-if="password !== passwordConfirmation" class="warning">Does not match Password</small>
         </div>
         <input type="submit" class="btn btn-primary" value="Submit">
       </form>
     </div>
   </div>
 </template>
+
+<style>
+  .warning {
+  color: red;
+}
+</style>
 
 <script>
 import axios from "axios";

@@ -7,9 +7,16 @@
         <ul>
           <li v-for="error in errors">{{ error }}</li>
         </ul>
-         <div>
-          <label>Category:</label>
-          <input type="text" v-model="newCategoryId">
+        <div>
+          <select v-model="newCategoryId">
+            <option disable value="">Select A Category</option>
+            <option value="1">Food</option>
+            <option value="2">Waste</option>
+            <option value="3">Energy</option>
+            <option value="4">Transportation</option>
+            <option value="5">Water</option>
+            <option value="6">Social</option>
+          </select>
         </div>
         <div>
           <label>Title:</label>
@@ -80,7 +87,7 @@ export default {
       axios
         .post("/api/posts", params)
         .then(response => {
-          this.$router.push("/posts");
+          this.$router.push(`/posts/${response.data.id}`);
         })
         .catch(error => {
           console.log(error.response);

@@ -11,13 +11,13 @@
           <img v-bind:src="image.url" alt="">
         </div>
         <router-link v-if="post.user_id == $parent.getUserId()" v-bind:to="`/posts/${post.id}/edit`">Edit Post</router-link><br><br>
-        <button v-if="!post.favorite" v-on:click="createFavorite()">Favorite</button>
-        <button v-if="post.favorite" v-on:click="destroyFavorite()">UnFavorite</button>
+        <button v-if="!post.favorite && $parent.isLoggedIn()" v-on:click="createFavorite()">Favorite</button>
+        <!-- <button v-if="post.favorite" v-on:click="destroyFavorite()">UnFavorite</button> -->
     </div>
 
-    <div>
+ <!--    <div>
       <p>{{ post.favorite_id }}</p>
-    </div>
+    </div> -->
 
   </div>
 </template>

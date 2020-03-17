@@ -11,7 +11,7 @@
 export default {
   data: function() {
     return {
-      message: "Capstone!"
+      message: "Welcome to Green Goals!"
     };
   },
   created: function() {},

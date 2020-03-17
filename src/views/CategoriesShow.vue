@@ -1,7 +1,7 @@
 <template>
   <div class="categories-show">
 
-    <h1>{{ message }}</h1>
+    <h1>{{ category.name }}</h1>
     <div v-for="post in category.posts">
       <h2>{{ post.title }}</h2>
       <h4>{{ post.user_name }}</h4>
@@ -23,7 +23,6 @@ import axios from 'axios';
 export default {
   data: function() {
     return {
-      message: "Categories Show",
       category: {},
       posts: []
     };
@@ -34,6 +33,7 @@ export default {
       .get(`/api/categories/${this.$route.params.id}`)
       .then(response => {
         this.category = response.data;
+        console.log(response.data);
       });
   },
 

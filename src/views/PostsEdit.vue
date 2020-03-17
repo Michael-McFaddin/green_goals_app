@@ -1,12 +1,23 @@
 <template>
   <div class="posts-edit">
 
-    <h1>Posts Edit</h1>
+    <h1>Edit Your Post</h1>
     <div class="container">
       <form v-on:submit.prevent="updatePost()">
         <ul>
           <li v-for="error in errors">{{ error }}</li>
         </ul>
+        <div>
+          <select v-model="post.category_id">
+            <option disable value="">Select A Category</option>
+            <option value="1">Food</option>
+            <option value="2">Waste</option>
+            <option value="3">Energy</option>
+            <option value="4">Transportation</option>
+            <option value="5">Water</option>
+            <option value="6">Social</option>
+          </select>
+        </div>
         <div>
           <label>Title:</label>
           <input type="text" v-model="post.title">
@@ -15,12 +26,8 @@
           <label>Body:</label>
           <textarea v-model="post.body" name="" id="" cols="30" rows="10"></textarea>
         </div>
-        <div>
-          <label>Category:</label>
-          <input type="text" v-model="post.category_id"><br><br>
-        </div>
-        <button type="submit">Update</button><br>
-      </form>
+        <input type="submit" value="Submit"><br>
+      </form><br>
     </div>
     <div>
       <button v-on:click="destroyPost()">Delete Post</button><br><br>

@@ -32,7 +32,7 @@
           <input type="text" v-model="password_confirmation"><br>
           <small v-if="password !== password_confirmation" class="warning">Does not match Password</small>
         </div>
-        <button click="submit">Update</button>
+        <input type="submit" value="Submit">
       </form>
     </div>
 
