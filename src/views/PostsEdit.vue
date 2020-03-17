@@ -94,11 +94,16 @@ export default {
         });
     },
     destroyPost: function() {
-      axios
-        .delete(`/api/posts/${this.post.id}`)
-        .then(response => {
-          this.$router.push("/posts");
-        });
+      if (confirm("Do you really want to delete?")) {
+        axios
+          .delete(`/api/posts/${this.post.id}`)
+          .then(response => {
+            this.$router.push("/posts");
+          })
+          .catch(error => {
+            this.errors = error.response.data.errors;
+          });
+      }
     },
     destroyImage: function(image) {
       axios
@@ -118,6 +123,9 @@ export default {
         .then(response => {
           this.post.images.push(response.data);
           this.newImageUrl = "";
+        })
+        .catch(error => {
+          this.errors = error.response.data.errors;
         });
     }
   }

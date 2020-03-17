@@ -25,11 +25,11 @@
         </div>
         <div>
           <label>Password: </label>
-          <input type="text" v-model="password">
+          <input type="password" v-model="password">
         </div>
         <div>
           <label>Password Confirmation: </label>
-          <input type="text" v-model="password_confirmation"><br>
+          <input type="password" v-model="password_confirmation"><br>
           <small v-if="password !== password_confirmation" class="warning">Does not match Password</small>
         </div>
         <input type="submit" value="Submit">
@@ -92,11 +92,13 @@ export default {
         });
     },
     destroyUser: function() {
-      axios
-        .delete(`/api/users/${this.user.id}`)
-        .then(response => {
-          this.$router.push("/logout");
-        });
+      if (confirm("Do you really want to delete your account?")) {
+        axios
+          .delete(`/api/users/${this.user.id}`)
+          .then(response => {
+            this.$router.push("/logout");
+          });
+      }    
     }
   }
 };
