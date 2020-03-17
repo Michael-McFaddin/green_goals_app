@@ -1,8 +1,12 @@
 <template>
   <div class="posts-index">
-
-    <h1>All Posts</h1>
-    <div v-for="post in posts">
+    
+    <div class="container">
+      <h1>All Posts</h1>
+      Search by title keyword: <input type="text" v-model="titleFilter">
+    </div>
+    
+    <div v-for="post in filterBy(posts, titleFilter, 'title')">
       <h2>{{ post.title }}</h2>
       <h3>{{ post.category_name }}</h3>
       <h4>{{ post.user_name }}</h4>
@@ -21,11 +25,14 @@ img {
 
 <script>
 import axios from 'axios';
+import Vue2Filters from 'vue2-filters';
 
 export default {
+  mixins: [Vue2Filters.mixin],
   data: function() {
     return {
-      posts: []
+      posts: [],
+      titleFilter: ""
     };
   },
 
