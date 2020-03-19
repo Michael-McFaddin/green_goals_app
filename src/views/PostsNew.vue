@@ -39,9 +39,18 @@
           <input type="text" v-model="newImageUrl3">
         </div> -->
         <div>
-          <label>Image:</label>
-          <input type="file" v-on:change="setFile($event)" ref="fileInput">
+          <label>Image 1:</label>
+          <input type="file" v-on:change="setFile($event, 1)" ref="fileInput">
         </div>
+        <div>
+          <label>Image 2:</label>
+          <input type="file" v-on:change="setFile($event, 2)" ref="fileInput">
+        </div>
+        <div>
+          <label>Image 3:</label>
+          <input type="file" v-on:change="setFile($event, 3)" ref="fileInput">
+        </div>
+
         <input type="submit" value="Submit">
       </form>
     </div>
@@ -64,7 +73,9 @@ export default {
       // newImageUrl1: "",
       // newImageUrl2: "",
       // newImageUrl3: "",
-      image: "",
+      image1: "",
+      image2: "",
+      image3: "",
       errors: []
     };
   },
@@ -72,22 +83,18 @@ export default {
   created: function() {},
 
   methods: {
-    setFile: function(event) {
+    setFile: function(event, num) {
       if (event.target.files.length > 0) {
-        this.image = event.target.files[0];
+        if (num === 1) {
+          this.image1 = event.target.files[0]; 
+        } else if (num === 2) {
+          this.image2 = event.target.files[0];
+        } else {
+          this.image3 = event.target.files[0];
+        }
       }
     },
     createPost: function() {
-      // var images = [];
-      // if (this.newImageUrl1) {
-      //   images.push(this.newImageUrl1);
-      // }
-      // if (this.newImageUrl2) {
-      //   images.push(this.newImageUrl2);
-      // }
-      // if (this.newImageUrl3) {
-      //   images.push(this.newImageUrl3);
-      // }
       // var params = {
       //   category_id: this.newCategoryId,
       //   title: this.newTitle,
@@ -99,8 +106,15 @@ export default {
       formData.append("category_id", this.newCategoryId);
       formData.append("title", this.newTitle);
       formData.append("body", this.newBody);
-      formData.append("image", this.image);
-
+      if (this.image1) {
+        formData.append("image1", this.image1);
+      }
+      if (this.image2) {
+        formData.append("image2", this.image2);
+      }
+      if (this.image3) {
+        formData.append("image3", this.image3);
+      }
       axios
         .post("/api/posts", formData)
         .then(response => {
