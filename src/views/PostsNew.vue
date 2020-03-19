@@ -26,17 +26,21 @@
           <label>Body:</label>
           <textarea v-model="newBody" name="" id="" cols="30" rows="10"></textarea>
         </div>
-         <div>
+         <!-- <div>
           <label>Image Url 1:</label>
           <input type="text" v-model="newImageUrl1">
         </div>
          <div>
           <label>Image Url 2:</label>
           <input type="text" v-model="newImageUrl2">
-        </div>
-         <div>
+        </div> -->
+         <!-- <div>
           <label>Image Url 3:</label>
           <input type="text" v-model="newImageUrl3">
+        </div> -->
+        <div>
+          <label>Image:</label>
+          <input type="file" v-on:change="setFile($event)" ref="fileInput">
         </div>
         <input type="submit" value="Submit">
       </form>
@@ -57,9 +61,10 @@ export default {
       newCategoryId: "",
       newTitle: "",
       newBody: "",
-      newImageUrl1: "",
-      newImageUrl2: "",
-      newImageUrl3: "",
+      // newImageUrl1: "",
+      // newImageUrl2: "",
+      // newImageUrl3: "",
+      image: "",
       errors: []
     };
   },
@@ -67,25 +72,37 @@ export default {
   created: function() {},
 
   methods: {
+    setFile: function(event) {
+      if (event.target.files.length > 0) {
+        this.image = event.target.files[0];
+      }
+    },
     createPost: function() {
-      var images = [];
-      if (this.newImageUrl1) {
-        images.push(this.newImageUrl1);
-      }
-      if (this.newImageUrl2) {
-        images.push(this.newImageUrl2);
-      }
-      if (this.newImageUrl3) {
-        images.push(this.newImageUrl3);
-      }
-      var params = {
-        category_id: this.newCategoryId,
-        title: this.newTitle,
-        body: this.newBody,
-        images: images
-      };
+      // var images = [];
+      // if (this.newImageUrl1) {
+      //   images.push(this.newImageUrl1);
+      // }
+      // if (this.newImageUrl2) {
+      //   images.push(this.newImageUrl2);
+      // }
+      // if (this.newImageUrl3) {
+      //   images.push(this.newImageUrl3);
+      // }
+      // var params = {
+      //   category_id: this.newCategoryId,
+      //   title: this.newTitle,
+      //   body: this.newBody,
+      //   images: images
+      // };
+      var formData = new FormData();
+
+      formData.append("category_id", this.newCategoryId);
+      formData.append("title", this.newTitle);
+      formData.append("body", this.newBody);
+      formData.append("image", this.image);
+
       axios
-        .post("/api/posts", params)
+        .post("/api/posts", formData)
         .then(response => {
           this.$router.push(`/posts/${response.data.id}`);
         })

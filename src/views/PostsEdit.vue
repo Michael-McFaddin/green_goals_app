@@ -36,13 +36,18 @@
 
     <div>
       <form v-on:submit.prevent="createImage()">
-        <div>
+        <!-- <div>
           <label>Image Url:</label>
           <input type="text" v-model="newImageUrl">
+        </div> -->
+        <div>
+          <label>Add Image:</label>
+          <input type="file" v-on:change="setFile($event)" ref="fileInput">
         </div>
-        <button type="submit">Add Image</button><br><br>
+        <input type="submit" value="Submit"><br><br>
       </form>
     </div>
+
 
     <div v-for="image in post.images">
       <img :src="image.url" alt=""><br>
@@ -64,7 +69,8 @@ export default {
     return {
       post: {},
       errors: [],
-      newImageUrl: ""
+      image: "",
+      // newImageUrl: ""
     };
   },
 
@@ -113,16 +119,26 @@ export default {
           this.post.images.splice(index, 1);
         });
     },
+    setFile: function(event) {
+      if (event.target.files.length > 0) {
+        this.image = event.target.files[0];
+      }
+    },
     createImage: function() {
-      var params = {
-        url: this.newImageUrl,
-        post_id: this.post.id
-      };
+      // var params = {
+      //   url: this.newImageUrl,
+      //   post_id: this.post.id
+      // };
+
+      var formData = new FormData();
+      formData.append("image", this.image);
+      formData.append("post_id", this.post.id);
+
       axios
-        .post("/api/images", params)
+        .post("/api/images", formData)
         .then(response => {
           this.post.images.push(response.data);
-          this.newImageUrl = "";
+          // this.newImageUrl = "";
         })
         .catch(error => {
           this.errors = error.response.data.errors;
