@@ -14,6 +14,7 @@ import PostsEdit from "../views/PostsEdit";
 import CategoriesIndex from "../views/CategoriesIndex";
 import CategoriesShow from "../views/CategoriesShow";
 import FavoritesIndex from "../views/FavoritesIndex";
+import RecipesIndex from "../views/RecipesIndex";
 
 Vue.use(VueRouter);
 
@@ -87,6 +88,11 @@ const routes = [
     path: '/favorites',
     name: 'favorites-index',
     component: FavoritesIndex
+  },
+  {
+    path: '/recipes',
+    name: 'recipes-index',
+    component: RecipesIndex
   }
 ];
 
