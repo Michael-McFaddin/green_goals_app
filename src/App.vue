@@ -371,14 +371,14 @@
                 <router-link to="/categories">Categories</router-link>
               </li>
               <li>
-                <router-link v-if="isLoggedIn()" to="/favorites">Favorites</router-link>
-              </li>
-              <li>
                 <router-link v-if="isLoggedIn()" to="/recipes">Recipes</router-link>
               </li>
             </ul>
 
             <ul class="nav navbar-nav nav-right">
+              <li>
+                <router-link v-if="isLoggedIn()" to="/favorites">Favorites</router-link>
+              </li>
               <li>
                 <router-link v-if="isLoggedIn()" to="/users/:id">Account</router-link>
               </li>
