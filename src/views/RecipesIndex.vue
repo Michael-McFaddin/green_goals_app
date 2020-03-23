@@ -10,6 +10,7 @@
       <h4>Prep time: {{ recipe.prep_time }} minutes</h4>
       <h4>Serves: {{ recipe.servings }}</h4>
       <div v-for="ingredient in recipe.ingredients">{{ ingredient.ingredient }}</div>
+      <!-- <div v-for="instruction in recipe.analyzed_instructions">{{ instruction.step }}</div> -->
       <p>{{ recipe.instructions }}</p>
     </div>
   
