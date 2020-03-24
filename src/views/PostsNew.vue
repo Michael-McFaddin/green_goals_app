@@ -2,25 +2,55 @@
   <div class="posts-new">
 
     <div class="container">
-      <div class="col-md-6">
+      <div class="col-md-12">
         <h2 class="mrg-btm-30">Create A New Post</h2>
-        <form>
+        <form v-on:submit.prevent="createPost()">
+          <div>
+            <ul>
+              <li v-for="error in errors">{{ error }}</li>
+            </ul>
+          </div>
+
           <div class="row">
             <div class="form-group col-md-6">
-              Title<input type="text" class="form-control" placeholder="Title">
+              Category<select class="form-control" v-model="newCategoryId">
+                <option disable value="">Select A Category</option>
+                <option value="1">Food</option>
+                <option value="2">Waste</option>
+                <option value="3">Energy</option>
+                <option value="4">Transportation</option>
+                <option value="5">Water</option>
+                <option value="6">Social</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              Title<input type="text" class="form-control" placeholder="Title" v-model="newTitle">
             </div>
             <div class="form-group col-md-12">
-              Body<textarea class="form-control" rows="3" placeholder="Body"></textarea>
+              Body<textarea class="form-control" rows="3" placeholder="Body" v-model="newBody"></textarea>
+            </div>
+
+            <div class="form-group col-md-12">
+              <label>Image 1:</label>
+              <input type="file" class="form-control" v-on:change="setFile($event, 1)" ref="fileInput">
             </div>
             <div class="form-group col-md-12">
-              <input class="btn btn-md btn-dark" type="submit" value="Send Message">
+              <label>Image 2:</label>
+              <input type="file" class="form-control" v-on:change="setFile($event, 2)" ref="fileInput">
+            </div>
+            <div class="form-group col-md-12">
+              <label>Image 3:</label>
+              <input type="file" class="form-control" v-on:change="setFile($event, 3)" ref="fileInput">
+            </div>
+            <div class="form-group col-md-12">
+              <input class="btn btn-md btn-dark" type="submit" value="Create Post">
             </div>
           </div>
         </form>
       </div>
     </div>
     
-    <div>
+    <!-- <div>
       <form v-on:submit.prevent="createPost()">
         <h1>Make a new Post</h1>
         <ul>
@@ -44,7 +74,8 @@
          <div>
           <label>Body:</label>
           <textarea v-model="newBody" name="" id="" cols="30" rows="10"></textarea>
-        </div>
+        </div> -->
+
          <!-- <div>
           <label>Image Url 1:</label>
           <input type="text" v-model="newImageUrl1">
@@ -57,7 +88,8 @@
           <label>Image Url 3:</label>
           <input type="text" v-model="newImageUrl3">
         </div> -->
-        <div>
+
+        <!-- <div>
           <label>Image 1:</label>
           <input type="file" v-on:change="setFile($event, 1)" ref="fileInput">
         </div>
@@ -72,7 +104,7 @@
 
         <input type="submit" value="Submit">
       </form>
-    </div>
+    </div> -->
 
   </div>
 </template>

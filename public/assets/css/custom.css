@@ -4,4 +4,7 @@
   Your CSS goes here
 ----------------------------------------------------------------------------*/
 
-
+.active-btn {
+  background-color: #5ace6e;
+  color: white;
+}

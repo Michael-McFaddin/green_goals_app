@@ -1,43 +1,43 @@
 <template>
   <div class="posts-index">
 
-    <div class="widget widget-search">
-      <h3 class="widget-tittle">Search</h3>
-      <label class="input-wrapper">
-        <input class="form-control" type="text" placeholder="Title Search" v-model="titleFilter">
-        <a href="" class="btn inline-submit mrg-top-5"><i class="ei ei-search"></i></a>
-      </label>
-      <div class="mrg-btm-15">
-        <a class="btn btn-md btn-theme-inverse" v-on:click="sortById = 1 ">Oldest to Newest</a>
-      </div>
-      <div class="mrg-btm-15">
-        <a class="btn btn-md btn-theme-inverse" v-on:click="sortById = -1 ">Newest to Oldest</a>
+    <div class="widget widget-search container text-center">
+      <div class="mrg-btm-15 mrg-top-15">
+        <label class="input-wrapper">
+          <input class="form-control" type="text" placeholder="Title Search" v-model="titleFilter">
+          <a href="" class="btn inline-submit mrg-top-5"><i class="ei ei-search"></i></a>
+        </label>
+        <span><a class="btn btn-md btn-theme-inverse" v-bind:class="{'active-btn': sortById == 1}" v-on:click="sortById = 1 ">Oldest to Newest</a>
+        <a class="btn btn-md btn-theme-inverse" v-bind:class="{'active-btn': sortById == -1}" v-on:click="sortById = -1 ">Newest to Oldest</a></span>
       </div>
     </div>
 
     <!-- Blog list full width -->
-    <section class="section-1">
+    <!-- <section class="section-1"> -->
      <div class="container">
-      <div class="blog blog-list" v-for="post in orderBy(filterBy(posts, titleFilter, 'title'), 'id', sortById)">
+      <div class="blog blog-list" v-for="post in orderBy(filterBy(posts, titleFilter, 'title'), 'id', sortById).slice(0,5)">
         <div class="blog-item">
           <div class="row">
             <div class="col-md-4">
               <div class="blog-media">
-                <a href="single-post-full-width.html"><img class="img-responsive" v-bind:src="post.image" alt=""></a>
+                <router-link v-bind:to="`/posts/${post.id}`"><img class="img-responsive" v-bind:src="post.image" alt=""></router-link>
               </div>
             </div>
             <div class="col-md-8">
               <div class="blog-content">
-                <h3 class="blog-tittle"><a href="single-post-full-width.html">{{ post.title }}</a></h3>
+                <h3 class="blog-tittle"><router-link v-bind:to="`/posts/${post.id}`">{{ post.title }}</router-link></h3>
                 <div class="blog-meta">
-                  <span class="author">By <a class="theme-color" href="blog-classic-left-sidebar.html">{{ post.user_name }}</a></span>
+                  <span class="author">By <a class="theme-color">{{ post.user_name }}</a></span>
                   <h5 class="author">Category: {{ post.category_name }}</h5>
                   <span class="date">Created: {{ relativeDate(post.created_at) }}</span>
                 </div>
-                <p class="blog-article">{{ post.body }}</p>
+                <p v-if="post.body.length > 300" class="blog-article">{{ post.body.slice(0, 300) }}...</p>
+                <p v-else class="blog-article">{{ post.body }}</p>
+       
                 <div class="blog-action">
                   <!-- <span class="comments"><a href="javascript:void(0);"><i class="ei ei-speech-bubble"></i> 20</a></span> -->
                   <!-- <span class="likes"><a href="javascript:void(0);"><i class="ei ei-heart"></i> 168</a></span> -->
+                  <span></span>
                 </div>
                 <div class="continue-reading">
                   <router-link class="btn btn-dark-inverse" v-bind:to="`/posts/${post.id}`"><i class="ei ei-right-arrow"></i></router-link>
@@ -51,7 +51,7 @@
         <button class="btn btn-dark btn-md">Show More</button>
       </div> -->
     </div>
-    </section>
+    <!-- </section> -->
     <!-- Blog End -->
 
     <!-- Blog 3 column masonry -->
@@ -232,13 +232,10 @@
 </template>
 
 <style>
-/*img {
+img {
   width: 250px;
 }
-.button {
-  background-color: blue;
-  color: white;
-}*/
+
 </style>
 
 <script>

@@ -1,7 +1,71 @@
 <template>
   <div class="posts-edit">
 
-    <h1>Edit Your Post</h1>
+
+    <div class="container">
+      <div class="col-md-6">
+        <h2 class="mrg-btm-30">Edit Your Post</h2>
+        <form v-on:submit.prevent="updatePost()">
+          <div>
+            <ul>
+              <li v-for="error in errors">{{ error }}</li>
+            </ul>
+          </div>
+
+          <div class="dropdown">
+            <a class="btn btn-md btn-dark" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Choose Category
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-6">
+              Category<input type="text" class="form-control" placeholder="Category" v-model="post.category_id">
+            </div>
+            <div class="form-group col-md-6">
+              Title<input type="text" class="form-control" placeholder="Title" v-model="post.title">
+            </div>
+            <div class="form-group col-md-12">
+              Body<textarea class="form-control" rows="3" placeholder="Body" v-model="post.body"></textarea>
+            </div>
+            <div class="form-group col-md-12">
+              <input class="btn btn-md btn-dark" type="submit" value="Update Post">
+            </div>
+            <div class="form-group col-md-12">
+              <input class="btn btn-md btn-danger" type="submit" value="Delete Post">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="col-md-6">
+        <form v-on:submit.prevent="createImage()">
+          <div>
+            <h3 class="mrg-btm-30">Add An Image</h3>
+            <input type="file" v-on:change="setFile($event)" ref="fileInput">
+          </div>
+          <input type="submit" value="Submit"><br><br>
+        </form>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="col-md-6" v-for="image in post.images">
+        <img :src="image.url" alt=""><br>
+        <button class="btn btn-sn btn-danger" v-on:click="destroyImage(image)">Remove</button>
+      </div>
+    </div>
+
+
+    <!-- <h1>Edit Your Post</h1>
     <div class="container">
       <form v-on:submit.prevent="updatePost()">
         <ul>
@@ -31,28 +95,29 @@
     </div>
     <div>
       <button v-on:click="destroyPost()">Delete Post</button><br><br>
-    </div>
+    </div> -->
 
 
-    <div>
+    <!-- <div>
       <form v-on:submit.prevent="createImage()">
-        <!-- <div>
-          <label>Image Url:</label>
-          <input type="text" v-model="newImageUrl">
-        </div> -->
         <div>
           <label>Add Image:</label>
           <input type="file" v-on:change="setFile($event)" ref="fileInput">
         </div>
         <input type="submit" value="Submit"><br><br>
       </form>
-    </div>
+    </div> -->
 
 
-    <div v-for="image in post.images">
+    <!-- <div v-for="image in post.images">
       <img :src="image.url" alt=""><br>
       <button v-on:click="destroyImage(image)">Remove</button>
-    </div>
+    </div> -->
+
+    <!-- <div>
+      <label>Image Url:</label>
+      <input type="text" v-model="newImageUrl">
+    </div> -->
     
     
   </div>
