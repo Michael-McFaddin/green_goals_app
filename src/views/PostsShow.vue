@@ -24,7 +24,7 @@
     </section>
     <!-- Portfolio Content End -->
 
-    <section class="footer-nav col-3">
+    <!-- <section class="footer-nav col-3">
       <div class="container-fluid">
         <a href="portfolio-single-3.html" class="footer-nav-item text-center">
           <span class="font-size-17"><i class="ei ei-left-arrow mrg-right-10"></i> Prev</span>
@@ -36,7 +36,7 @@
           <span class="font-size-17">Next <i class="ei ei-right-arrow mrg-left-10"></i></span>
         </a>
       </div>
-    </section>
+    </section> -->
 
 
 

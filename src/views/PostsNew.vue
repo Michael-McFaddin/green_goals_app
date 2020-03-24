@@ -1,5 +1,24 @@
 <template>
   <div class="posts-new">
+
+    <div class="container">
+      <div class="col-md-6">
+        <h2 class="mrg-btm-30">Create A New Post</h2>
+        <form>
+          <div class="row">
+            <div class="form-group col-md-6">
+              Title<input type="text" class="form-control" placeholder="Title">
+            </div>
+            <div class="form-group col-md-12">
+              Body<textarea class="form-control" rows="3" placeholder="Body"></textarea>
+            </div>
+            <div class="form-group col-md-12">
+              <input class="btn btn-md btn-dark" type="submit" value="Send Message">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
     
     <div>
       <form v-on:submit.prevent="createPost()">
