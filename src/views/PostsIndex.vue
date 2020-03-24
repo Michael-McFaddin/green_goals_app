@@ -12,6 +12,10 @@
       </div>
     </div>
 
+    <div v-if="$parent.isLoggedIn()" class="container">
+      <h2 class="mrg-btm-20 mrg-top-5"><router-link to="/recipes">Let Green Goals help you find a green recipe!</router-link></h2>
+    </div>
+
     <!-- Blog list full width -->
     <!-- <section class="section-1"> -->
      <div class="container">
@@ -232,10 +236,6 @@
 </template>
 
 <style>
-img {
-  width: 250px;
-}
-
 </style>
 
 <script>

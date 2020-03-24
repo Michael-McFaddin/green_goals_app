@@ -12,21 +12,17 @@
             </ul>
           </div>
 
-          <div class="dropdown">
-            <a class="btn btn-md btn-dark" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Choose Category
-            </a>
-
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </div>
-
           <div class="row">
             <div class="form-group col-md-6">
-              Category<input type="text" class="form-control" placeholder="Category" v-model="post.category_id">
+              Category<select class="form-control" v-model="post.category_id">
+                <option disable value="">Select A Category</option>
+                <option value="1">Food</option>
+                <option value="2">Waste</option>
+                <option value="3">Energy</option>
+                <option value="4">Transportation</option>
+                <option value="5">Water</option>
+                <option value="6">Social</option>
+              </select>
             </div>
             <div class="form-group col-md-6">
               Title<input type="text" class="form-control" placeholder="Title" v-model="post.title">
@@ -50,9 +46,9 @@
         <form v-on:submit.prevent="createImage()">
           <div>
             <h3 class="mrg-btm-30">Add An Image</h3>
-            <input type="file" v-on:change="setFile($event)" ref="fileInput">
+            <input type="file" class="form-control" v-on:change="setFile($event)" ref="fileInput">
           </div>
-          <input type="submit" value="Submit"><br><br>
+          <input class="btn btn-md btn-dark" type="submit" value="Add Image"><br><br>
         </form>
       </div>
     </div>

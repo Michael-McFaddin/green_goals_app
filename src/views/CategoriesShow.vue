@@ -1,6 +1,23 @@
 <template>
   <div class="categories-show">
 
+        <!-- Page Tittle Start -->
+        <section class="page-tittle page-tittle-sm">
+          <div class="container">
+            <div class="page-tittle-head">
+              <h2>Page Tittle Small</h2>
+              <p>Subtittle Goes Here</p>
+            </div>
+              <ol class="breadcrumb pull-right mrg-top-30">
+                <li class="breadcrumb-item"><a href="#">Features</a></li>
+                <li class="breadcrumb-item"><a href="#">Page Tittle</a></li>
+                <li class="breadcrumb-item"><a href="#">Size</a></li>
+                <li class="breadcrumb-item active">Page Tittle Medium</li>
+              </ol>
+          </div>
+        </section>
+        <!-- Page Tittle End -->
+
     <div class="widget widget-search container text-center">
       <div class="mrg-btm-15 mrg-top-15">
         <label class="input-wrapper">
@@ -10,6 +27,10 @@
         <span><a class="btn btn-md btn-theme-inverse" v-bind:class="{'active-btn': sortById == 1}" v-on:click="sortById = 1 ">Oldest to Newest</a>
         <a class="btn btn-md btn-theme-inverse" v-bind:class="{'active-btn': sortById == -1}" v-on:click="sortById = -1 ">Newest to Oldest</a></span>
       </div>
+    </div>
+    
+    <div v-if="$parent.isLoggedIn()" class="container">
+      <h2 class="blog-tittle"><router-link to="/recipes">Let Green Goals help you find a green recipe!</router-link></h2>
     </div>
 
     <!-- Blog list full width -->
@@ -30,10 +51,12 @@
                   <span class="author">By <a class="theme-color" href="blog-classic-left-sidebar.html">{{ post.user_name }}</a></span>
                   <span class="date">Created: {{ relativeDate(post.created_at) }}</span>
                 </div>
-                <p class="blog-article">{{ post.body }}</p>
+                <p v-if="post.body.length > 300" class="blog-article">{{ post.body.slice(0, 300) }}...</p>
+                <p v-else class="blog-article">{{ post.body }}</p>
                 <div class="blog-action">
                   <!-- <span class="comments"><a href="javascript:void(0);"><i class="ei ei-speech-bubble"></i> 20</a></span> -->
                   <!-- <span class="likes"><a href="javascript:void(0);"><i class="ei ei-heart"></i> 168</a></span> -->
+                  <span></span>
                 </div>
                 <div class="continue-reading">
                   <router-link class="btn btn-dark-inverse" v-bind:to="`/posts/${post.id}`"><i class="ei ei-right-arrow"></i></router-link>

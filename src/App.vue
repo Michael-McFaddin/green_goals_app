@@ -32,7 +32,7 @@
                 <router-link v-if="isLoggedIn()" to="/favorites">Favorites</router-link>
               </li>
               <li class="nav-item dropdown">
-                <router-link v-if="isLoggedIn()" to="/recipes">Recipes</router-link>
+                <router-link v-if="isLoggedIn()" to="/recipes">Recipe Search</router-link>
               </li>
               <li class="nav-item dropdown">
                 <router-link v-if="!isLoggedIn()" to="/login">Login</router-link>
