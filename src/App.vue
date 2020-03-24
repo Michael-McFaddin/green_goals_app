@@ -69,6 +69,19 @@
       </div>
     </section>
     <!-- Page Title End -->
+
+    <!-- Dummy Content Start -->
+    <!-- <section class="section-1">
+      <div class="container">
+        <div class="row">
+         <div class="col-md-offset-1 col-md-10">
+           <h2 class="heading-1 text-center">Experince Eastern</h2>
+           <p class="mrg-top-60"><span class="dropcap theme-color">L</span>orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived notonly five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Contrary to popular belief, Lorem Ipsum is not simple.</p>
+         </div>
+       </div>
+     </div>
+    </section> -->
+    <!-- Dummy Content End -->
   
 
     <!-- Header Start -->
