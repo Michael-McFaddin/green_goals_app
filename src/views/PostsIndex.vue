@@ -19,7 +19,7 @@
     <!-- Blog list full width -->
     <!-- <section class="section-1"> -->
      <div class="container">
-      <div class="blog blog-list" v-for="post in orderBy(filterBy(posts, titleFilter, 'title'), 'id', sortById).slice(0, 40)">
+      <div class="blog blog-list" v-for="post in orderBy(filterBy(posts, titleFilter, 'title'), 'id', sortById).slice(0, `${showNum}`)">
         <div class="blog-item">
           <div class="row">
             <div class="col-md-4">
@@ -39,8 +39,6 @@
                 <p v-else class="blog-article">{{ post.body }}</p>
        
                 <div class="blog-action">
-                  <!-- <span class="comments"><a href="javascript:void(0);"><i class="ei ei-speech-bubble"></i> 20</a></span> -->
-                  <!-- <span class="likes"><a href="javascript:void(0);"><i class="ei ei-heart"></i> 168</a></span> -->
                   <span></span>
                 </div>
                 <div class="continue-reading">
@@ -51,10 +49,13 @@
           </div>
         </div>
       </div>
-      <!-- <div class="text-center mrg-top-50">
-        <button class="btn btn-dark btn-md">Show More</button>
-      </div> -->
+      {{ showNum }}
+      <div class="text-center mrg-top-50">
+        <button v-on:click="showMore()" class="btn btn-dark btn-md">Show More</button>
+      </div>
     </div>
+
+
     <!-- </section> -->
     <!-- Blog End -->
 
@@ -249,7 +250,8 @@ export default {
     return {
       posts: [],
       titleFilter: "",
-      sortById: -1
+      sortById: -1,
+      showNum: 6
     };
   },
 
@@ -265,6 +267,9 @@ export default {
   methods: {
     relativeDate: function(date) {
       return moment(date).startOf('day').fromNow(date);
+    },
+    showMore: function() {
+      this.showNum = this.showNum + 6;
     }
   }
 };
