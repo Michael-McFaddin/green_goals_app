@@ -2,80 +2,80 @@
 ===========  General  ============
 ================================*/
 a:hover, a:focus {
-  color: #5ace6e; }
+  color: #13913f; }
 
 .theme-color {
-  color: #5ace6e; }
+  color: #13913f; }
 
 .theme-color-bg {
-  background-color: #5ace6e; }
+  background-color: #13913f; }
 
 /*================================
 ===========  Section  ============
 ================================*/
 .theme-overlay:before {
-  background-color: #5ace6e; }
+  background-color: #13913f; }
 
 /*================================
 ===========  Headers  ============
 ================================*/
 .header .navbar-collapse ul.navbar-nav > li:hover > a, .header .navbar-collapse ul.navbar-nav > li:focus > a, .header .navbar-collapse ul.navbar-nav > li.active > a {
-  color: #5ace6e; }
+  color: #13913f; }
 .header.header-sticky.sticky .navbar-collapse ul.navbar-nav > li:hover > a, .header.header-sticky.sticky .navbar-collapse ul.navbar-nav > li:focus > a, .header.header-sticky.sticky .navbar-collapse ul.navbar-nav > li.active > a {
-  color: #5ace6e; }
+  color: #13913f; }
 .header.header-full-screen .fs-nav .fs-nav-item:hover a .fs-nav .fs-nav-item:hover a {
-  background-color: #5ace6e; }
+  background-color: #13913f; }
 .header .cart-menu .check-out {
-  background-color: #5ace6e; }
+  background-color: #13913f; }
 .header .cart-menu a.check-out:hover {
-  background-color: #5ace6e; }
+  background-color: #13913f; }
 
 /*===================================
 ===========  Page Title  ============
 ===================================*/
 .breadcrumb li a:hover {
-  color: #5ace6e; }
+  color: #13913f; }
 
 .dark-overlay .breadcrumb li a:hover {
-  color: #5ace6e; }
+  color: #13913f; }
 
 /*================================
 ===========  Loaders  ============
 ================================*/
 .loader-wrapper .loader-1:before {
-  border-color: #5ace6e; }
+  border-color: #13913f; }
 .loader-wrapper .loader-2 {
-  border-top-color: #5ace6e; }
+  border-top-color: #13913f; }
 
 /*================================
 ===========  Buttons  ============
 ================================*/
 .btn-theme {
-  background-color: #5ace6e;
-  border-color: #5ace6e; }
+  background-color: #13913f;
+  border-color: #13913f; }
   .btn-theme:hover, .btn-theme:focus {
-    background-color: lighten #5ace6e, 20%; }
+    background-color: lighten #13913f, 20%; }
 
 .btn-theme-inverse {
-  color: #5ace6e;
-  border-color: #5ace6e; }
+  color: #13913f;
+  border-color: #13913f; }
   .btn-theme-inverse:hover, .btn-theme-inverse:focus {
-    background-color: #5ace6e; }
+    background-color: #13913f; }
 
 .btn-white:hover, .btn-white:focus,
 .btn-gray:hover,
 .btn-gray:focus {
-  background-color: #5ace6e; }
+  background-color: #13913f; }
 
 .btn-white-inverse:hover, .btn-white-inverse:focus {
-  background-color: #5ace6e;
-  border: 2px solid #5ace6e !important; }
+  background-color: #13913f;
+  border: 2px solid #13913f !important; }
 
 /*================================
 ===========  Heading  ============
 ================================*/
 .heading-1:after {
-  border-color: #5ace6e; }
+  border-color: #13913f; }
 
 /*===============================
 ===========  Images  ============
@@ -87,28 +87,28 @@ a:hover, a:focus {
 ===========  Features Blocks  ============
 ========================================*/
 .features-block-1:hover i {
-  color: #5ace6e; }
+  color: #13913f; }
 
 .features-block-3:hover i {
-  color: #5ace6e; }
+  color: #13913f; }
 
 .features-block-5:hover i {
-  color: #5ace6e; }
+  color: #13913f; }
 
 /*============================
 ===========  Tab  ============
 ============================*/
 .tab-style-1 li.active .a {
-  color: #5ace6e; }
+  color: #13913f; }
 .tab-style-1 li.active > a:after {
-  background-color: #5ace6e; }
+  background-color: #13913f; }
 .tab-style-1 li a:hover, .tab-style-1 li a:focus {
-  color: #5ace6e; }
+  color: #13913f; }
   .tab-style-1 li a:hover:after, .tab-style-1 li a:focus:after {
-    background-color: #5ace6e; }
+    background-color: #13913f; }
 
 .tab-style-3.theme-style li {
-  background-color: #5ace6e; }
+  background-color: #13913f; }
   .tab-style-3.theme-style li.active > a {
     background-color: #f6af93; }
   .tab-style-3.theme-style li a:hover, .tab-style-3.theme-style li a:focus {
@@ -124,64 +124,64 @@ a:hover, a:focus {
   background-color: #4681f2; }
 
 .tab-style-4 li.active > a {
-  color: #5ace6e; }
+  color: #13913f; }
   .tab-style-4 li.active > a:hover, .tab-style-4 li.active > a:focus {
-    color: #5ace6e; }
+    color: #13913f; }
   .tab-style-4 li.active > a:after {
-    background-color: #5ace6e; }
+    background-color: #13913f; }
 .tab-style-4 li a:hover, .tab-style-4 li a:focus {
-  color: #5ace6e; }
+  color: #13913f; }
   .tab-style-4 li a:hover:after, .tab-style-4 li a:focus:after {
-    background-color: #5ace6e; }
+    background-color: #13913f; }
 
 /*==============================
 ===========  Team   ============
 ==============================*/
 .team-4 ul.team-tab li a:before {
-  background-color: #5ace6e; }
+  background-color: #13913f; }
 
 /*=================================
 ===========  Pricing   ============
 =================================*/
 .pricing-2 .pricing-table.recommended .pricing-footer .btn {
-  background-color: #5ace6e; }
+  background-color: #13913f; }
 
 /*=====================================
 ===========  Progess Bar   ============
 =====================================*/
 .progress-wrapper .progress.progress-theme .progress-bar {
-  background-color: #5ace6e; }
+  background-color: #13913f; }
 
 /*==================================
 ===========  Timeline   ============
 ==================================*/
 .timeline ul li:hover
 .timeline ul li.active .timeline-content:before {
-  border-color: #5ace6e; }
+  border-color: #13913f; }
 
 /*=============================
 ===========  Form  ============
 =============================*/
 input.material-input.theme-color:focus,
 textarea.material-input.theme-color:focus {
-  border-color: #5ace6e; }
+  border-color: #13913f; }
 
 .radio.theme-color input[type="radio"]:checked + label:before {
-  border-color: #5ace6e; }
+  border-color: #13913f; }
 .radio.theme-color input[type="radio"] + label:after {
-  background-color: #5ace6e; }
+  background-color: #13913f; }
 
 .checkbox.theme-color input[type="checkbox"]:checked + label:after {
-  background-color: #5ace6e; }
+  background-color: #13913f; }
 
 /*=======================================
 ===========  Swiper Slider   ============
 =======================================*/
 .swiper-bullet-1.theme-bullet .swiper-pagination-bullet-active:after {
-  border-color: #5ace6e; }
+  border-color: #13913f; }
 
 .theme-bullet .swiper-pagination-bullet-active {
-  background-color: #5ace6e; }
+  background-color: #13913f; }
 
 /*===============================
 ===========  Widget  ============
@@ -190,29 +190,29 @@ textarea.material-input.theme-color:focus {
   color: #5699a9; }
 
 .widget-tags.theme-color ul li a:hover {
-  background-color: #5ace6e; }
+  background-color: #13913f; }
 
 /*=====================================
 ===========  Blog Default  ============
 =====================================*/
 .blog-default .blog-item .author {
-  color: #5ace6e; }
+  color: #13913f; }
 .blog-default .blog-item .blog-meta:after {
-  background-color: #5ace6e; }
+  background-color: #13913f; }
 
 /*==================================
 ===========  Blog grid  ============
 ==================================*/
 .blog-grid .blog-item .author {
-  color: #5ace6e; }
+  color: #13913f; }
 
 /*=====================================
 ===========  Blog Classic  ============
 =====================================*/
 .blog-classic .blog-item .blog-content .blog-action a:hover {
-  color: #5ace6e; }
+  color: #13913f; }
 .blog-classic .blog-item .blog-content .continue-reading:hover {
-  color: #5ace6e; }
+  color: #13913f; }
 
 /*==================================
 ===========  Blog Card  ============
@@ -220,20 +220,20 @@ textarea.material-input.theme-color:focus {
 .blog-card .blog-item .blog-wrapper .blog-content .blog-action .likes a:hover,
 .blog-card .blog-item .blog-wrapper .blog-content .blog-action .comments a:hover,
 .blog-card .blog-item .blog-wrapper .blog-content .blog-action .share a:hover {
-  color: #5ace6e; }
+  color: #13913f; }
 .blog-card .blog-item .blog-wrapper .blog-content .blog-action .continue-reading:hover, .blog-card .blog-item .blog-wrapper .blog-content .blog-action .continue-reading:focus {
-  border-color: #5ace6e;
-  background-color: #5ace6e; }
+  border-color: #13913f;
+  background-color: #13913f; }
 .blog-card .blog-item .blog-wrapper .blog-content .blog-meta .author,
 .blog-card .blog-item .blog-wrapper .blog-content .blog-meta-alt .author {
-  color: #5ace6e; }
+  color: #13913f; }
 .blog-card .blog-item .blog-wrapper.theme-color-bg {
-  background-color: #5ace6e; }
+  background-color: #13913f; }
 
 /*=========================================
 ===========  Blog Single Post  ============
 =========================================*/
 .single-post-cover .blog-meta .author:hover {
-  color: #5ace6e; }
+  color: #13913f; }
 
 /*# sourceMappingURL=green.css.map */

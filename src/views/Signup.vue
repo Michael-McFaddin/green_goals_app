@@ -65,7 +65,7 @@
                       <div class="col-md-12 pdd-horizon-5">
                         
                         <div class="form-wrapper"> 
-                          <span class="mrg-top-10 text-gray">Already have an account? <a class="theme-color" href="login-2.html">Sign In</a></span>
+                          <span class="mrg-top-10 text-gray">Already have an account? <router-link class="theme-color" to="/login">Sign In</router-link></span>
                           <input class="btn btn-md btn-dark pull-right" type="submit" value="Sign Up">
                         </div>
                       </div>
@@ -79,7 +79,7 @@
             <div class="background-holder theme-overlay has-content" style="background-image:url(assets/images/bg-18.jpg)">
               <div class="content pdd-horizon-50">
                 <img class="img-responsive mrg-btm-20" src="assets/images/logo/logo-1.png" alt="">
-                <p class="text-white">Create a Eastern account or sign in with social media below:</p>
+                <h2 class="text-white">Create a your own Green Goals account now!</h2>
                 <ul class="social-btn mrg-top-30">
                   <li><a class="btn icon-btn-md btn-white-inverse hover-facebook border-radius-round" href="javascript:void(0);"><i class="ei ei-facebook"></i></a></li>
                   <li><a class="btn icon-btn-md btn-white-inverse hover-twitter border-radius-round" href="javascript:void(0);"><i class="ei ei-twitter"></i></a></li>

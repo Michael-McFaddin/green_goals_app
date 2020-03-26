@@ -8,6 +8,10 @@
   background-color: #5ace6e;
   color: white;
 }
-img {
+.img {
   width: 500px;
 }
+select.form-control {
+  color: #333743;
+}
+

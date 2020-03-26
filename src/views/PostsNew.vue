@@ -7,7 +7,7 @@
         <form v-on:submit.prevent="createPost()">
           <div>
             <ul>
-              <li v-for="error in errors">{{ error }}</li>
+              <li class="text-danger" v-for="error in errors">{{ error }}</li>
             </ul>
           </div>
 

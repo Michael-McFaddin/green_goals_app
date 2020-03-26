@@ -1,31 +1,51 @@
 <template>
   <div class="favorites-index">
 
+    <section v-if="favorites.length == 0" class="page-tittle page-tittle-sm bg-white">
+      <div class="container">               
+        <div class="page-tittle-head display-block text-center">
+          <h1 class="font-size-45 font-weight-light ls-1-5">You need some Favorites!</h1>
+          <h3>Check out some of the other posts and add to your favoites</h3>
+          <div class="text-center">
+            <router-link class="btn btn-md btn-theme" to="/posts">All Posts</router-link>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section v-else class="page-tittle page-tittle-sm bg-white">
+      <div class="container">               
+        <div class="page-tittle-head display-block text-center">
+          <h1 class="font-size-45 font-weight-light ls-1-5">Here are your Favorites</h1>
+        </div>
+      </div>
+    </section>
+
     <!-- Blog list full width -->
-    <section class="section-1">
+    <section class="section-4">
      <div class="container">
       <div class="blog blog-list" v-for="favorite in favorites">
         <div class="blog-item">
           <div class="row">
             <div class="col-md-4">
               <div class="blog-media">
-                <a href="single-post-full-width.html"><img class="img-responsive" v-bind:src="favorite.post.image" alt=""></a>
+                <router-link v-bind:to="`/posts/${favorite.post.id}`"><img class="img-responsive" v-bind:src="favorite.post.image" alt=""></router-link>
               </div>
             </div>
             <div class="col-md-8">
               <div class="blog-content">
-                <h3 class="blog-tittle"><a href="single-post-full-width.html">{{ favorite.post.title }}</a></h3>
+                <h3 class="blog-tittle"><router-link v-bind:to="`/posts/${favorite.post.id}`">{{ favorite.post.title }}</router-link></h3>
                 <div class="blog-meta">
-                  <span class="author">By <a class="theme-color" href="blog-classic-left-sidebar.html">{{ favorite.post.user_name }}</a></span>
-                  <!-- <span class="date">Created: {{ relativeDate(favorite.post.created_at) }}</span> -->
+                  <span class="author">By <a class="theme-color">{{ favorite.post.user_name }}</a></span>
+                  <span class="date">Created: {{ relativeDate(favorite.post.created_at) }}</span>
+                  <h4 class="blog-meta author">Category: {{ favorite.post.category_name }}</h4>
                 </div>
-                <p class="blog-article">{{ favorite.post.body }}</p>
+                <p v-if="favorite.post.body.length > 300" class="blog-article">{{ favorite.post.body.slice(0, 300) }}...</p>
+                <p v-else class="blog-article">{{ favorite.post.body }}</p>
                 <div class="blog-action">
                   <div class="mrg-btm-15">
                     <a class="btn btn-md btn-theme-inverse" v-on:click="destroyFavorite(favorite)">Unfavorite</a>
                   </div>
-                  <!-- <span class="comments"><a href="javascript:void(0);"><i class="ei ei-speech-bubble"></i> 20</a></span> -->
-                  <!-- <span class="likes"><a href="javascript:void(0);"><i class="ei ei-heart"></i> 168</a></span> -->
                 </div>
                 <div class="continue-reading">
                   <router-link class="btn btn-dark-inverse" v-bind:to="`/posts/${favorite.post.id}`"><i class="ei ei-right-arrow"></i></router-link>
@@ -88,10 +108,10 @@ export default {
           var index = this.favorites.indexOf(favorite);
           this.favorites.splice(index, 1);
         });
+    },
+    relativeDate: function(date) {
+      return moment(date).startOf('day').fromNow(date);
     }
-  },
-  relativeDate: function(date) {
-    return moment(date).startOf('day').fromNow(date);
   }
 };
 </script>

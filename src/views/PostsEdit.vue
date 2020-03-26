@@ -34,7 +34,7 @@
               <input class="btn btn-md btn-dark" type="submit" value="Update Post">
             </div>
             <div class="form-group col-md-12">
-              <input class="btn btn-md btn-danger" type="submit" value="Delete Post">
+              <input class="btn btn-md btn-danger" v-on:click="destroyPost()" type="submit" value="Delete Post">
             </div>
           </div>
         </form>

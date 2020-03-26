@@ -6,6 +6,9 @@
         <h2 class="mrg-btm-30">Edit User</h2>
         <form v-on:submit.prevent="updateUser(user)">
           <div class="row">
+            <ul>
+              <li class="text-danger" v-for="error in errors">{{ error }}</li>
+            </ul>
             <div class="form-group col-md-6">
               First Name<input type="text" class="form-control" v-model="user.first_name">
             </div>

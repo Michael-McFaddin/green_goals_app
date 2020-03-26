@@ -92,9 +92,9 @@
         <div class="image-container col-md-5 hidden-xs hidden-sm">
           <div class="background-holder theme-overlay has-content" style="background-image:url(assets/images/bg-18.jpg)">
             <div class="content pdd-horizon-50">
-              <h3 class="mrg-btm-20 text-white">Sign Up Now!</h3>
-              <p class="text-white font-size-14">This Modal is locked on, but you can optionaly turn this fucntion off.</p>
-              <!-- <button class="btn btn-sm btn-white-inverse mrg-vertical-20">Register</button> -->
+              <h3 class="mrg-btm-20 text-white">Don't have a Green Goals account? Sign Up Now!</h3>
+              <!-- <p class="text-white font-size-14">This Modal is locked on, but you can optionaly turn this fucntion off.</p> -->
+              <router-link class="btn btn-sm btn-white-inverse mrg-vertical-20" to="/signup">Register</router-link>
               <ul class="social-btn mrg-top-30">
                 <li><a class="btn icon-btn-md btn-white-inverse hover-facebook border-radius-round" href="javascript:void(0);"><i class="ei ei-facebook"></i></a></li>
                 <li><a class="btn icon-btn-md btn-white-inverse hover-twitter border-radius-round" href="javascript:void(0);"><i class="ei ei-twitter"></i></a></li>

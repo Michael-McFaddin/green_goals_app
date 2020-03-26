@@ -5,15 +5,15 @@
         <section class="page-tittle page-tittle-sm">
           <div class="container">
             <div class="page-tittle-head">
-              <h2>Page Tittle Small</h2>
+              <h2>{{ category.name }}</h2>
               <p>Subtittle Goes Here</p>
             </div>
-              <ol class="breadcrumb pull-right mrg-top-30">
+              <!-- <ol class="breadcrumb pull-right mrg-top-30">
                 <li class="breadcrumb-item"><a href="#">Features</a></li>
                 <li class="breadcrumb-item"><a href="#">Page Tittle</a></li>
                 <li class="breadcrumb-item"><a href="#">Size</a></li>
                 <li class="breadcrumb-item active">Page Tittle Medium</li>
-              </ol>
+              </ol> -->
           </div>
         </section>
         <!-- Page Tittle End -->
@@ -29,7 +29,7 @@
       </div>
     </div>
     
-    <div v-if="$parent.isLoggedIn()" class="container">
+    <div v-if="$parent.isLoggedIn()" class="text-center">
       <h2 class="blog-tittle"><router-link to="/recipes">Let Green Goals help you find a green recipe!</router-link></h2>
     </div>
 
@@ -48,8 +48,9 @@
               <div class="blog-content">
                 <h3 class="blog-tittle"><router-link v-bind:to="`/posts/${post.id}`">{{ post.title }}</router-link></h3>
                 <div class="blog-meta">
-                  <span class="author">By <a class="theme-color" href="blog-classic-left-sidebar.html">{{ post.user_name }}</a></span>
+                  <span class="author">By <a class="theme-color">{{ post.user_name }}</a></span>
                   <span class="date">Created: {{ relativeDate(post.created_at) }}</span>
+                  <h4 class="blog-meta author">Category: {{ category.name }}</h4>
                 </div>
                 <p v-if="post.body.length > 300" class="blog-article">{{ post.body.slice(0, 300) }}...</p>
                 <p v-else class="blog-article">{{ post.body }}</p>

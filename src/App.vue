@@ -55,7 +55,7 @@
 
     <!-- Page Title Start -->
     <section class="page-tittle page-tittle-xl kenburn-bg dark-overlay">
-      <img class="kenburn-img" src="assets/images/bg-18.jpg" alt="">
+      <img class="kenburn-img" src="assets/images/greengoals_3.jpg" alt="">
       <div class="container">
         <div class="page-tittle-head">
           <h2>Green Goals</h2>

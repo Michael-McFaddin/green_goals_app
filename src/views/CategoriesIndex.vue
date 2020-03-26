@@ -1,29 +1,25 @@
 <template>
   <div class="categories-index">
 
+    <!-- <div class="container text-center mrg-top-30">
+        <h2 class="mrg-btm-40">Select a Category and see what people are posting.</h2>
+    </div> -->  
 
     <!-- Page Tittle Start -->
-    <!-- <section class="page-tittle page-tittle-md bg-white">
+    <section class="page-tittle page-tittle-sm bg-white">
       <div class="container">               
         <div class="page-tittle-head display-block text-center">
-          <h1 class="font-size-45 font-weight-light ls-1-5">Recent Works</h1>
-          <p>Subtittle Goes Here</p>
+          <h1 class="font-size-45 font-weight-light ls-1-5">Select a Category</h1>
+          <h3>See what others have to share as they reach for Green Goals</h3>
         </div>
       </div>
-    </section> -->
+    </section>
     <!-- Page Tittle End -->
 
     <!-- Portfolio Start -->
     <section class="section-5">
-      <div class="container">
-        <!-- <div class="isotope-filter filter-1 text-center">
-          <a href="#" class="filter-item active" data-filter="*">All</a>
-          <a href="#" class="filter-item" data-filter=".web-design">Web Design</a>
-          <a href="#" class="filter-item" data-filter=".branding">Branding</a>
-          <a href="#" class="filter-item" data-filter=".apps">Apps</a>
-          <a href="#" class="filter-item" data-filter=".photography">Photography</a>
-        </div> -->  
-        <div class="portfolio isotope row col-2 gutter mrg-top-50">
+      <div class="container">  
+        <div class="portfolio isotope row col-3 gutter mrg-top-50">
           <div class="folio-item web-design" v-for="category in categories">
             <div class="folio-style-4">
               <div class="folio-image">
@@ -45,116 +41,6 @@
               </div>
             </div>
           </div>  
-          <!-- <div class="folio-item branding">
-            <div class="folio-style-4">
-              <div class="folio-image">
-                <img class="img-responsive" src="assets/images/portfolio/folio-28.jpg" alt="">
-              </div>
-              <div class="overlay">
-                <div class="folio-caption">
-                  <div class="folio-content">
-                    <div class="folio-info">
-                      <h3 class="folio-tittle">The Card</h3>
-                      <span class="folio-sub-title">Branding / Graphic</span>
-                    </div>
-                    <span class="divider"></span>
-                    <div class="folio-action">
-                      <a class="lightbox-img" href="assets/images/portfolio/folio-28.jpg" title="The Card"><i class="ei ei-plus-boxed"></i></a>
-                      <a class="" href="portfolio-single-1.html"><i class="ei ei-link"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
-          <!-- <div class="folio-item web-design">
-            <div class="folio-style-4">
-              <div class="folio-image">
-                <img class="img-responsive" src="assets/images/portfolio/folio-30.jpg" alt="">
-              </div>
-              <div class="overlay">
-                <div class="folio-caption">
-                  <div class="folio-content">
-                    <div class="folio-info">
-                      <h3 class="folio-tittle">The Card</h3>
-                      <span class="folio-sub-title">Branding / Graphic</span>
-                    </div>
-                    <span class="divider"></span>
-                    <div class="folio-action">
-                      <a class="lightbox-img" href="assets/images/portfolio/folio-30.jpg" title="The Card"><i class="ei ei-plus-boxed"></i></a>
-                      <a class="" href="portfolio-single-1.html"><i class="ei ei-link"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
-          <!-- <div class="folio-item apps">
-            <div class="folio-style-4">
-              <div class="folio-image">
-                <img class="img-responsive" src="assets/images/portfolio/folio-27.jpg" alt="">
-              </div>
-              <div class="overlay">
-                <div class="folio-caption">
-                  <div class="folio-content">
-                    <div class="folio-info">
-                      <h3 class="folio-tittle">The Card</h3>
-                      <span class="folio-sub-title">Branding / Graphic</span>
-                    </div>
-                    <span class="divider"></span>
-                    <div class="folio-action">
-                      <a class="lightbox-img" href="assets/images/portfolio/folio-27.jpg" title="The Card"><i class="ei ei-plus-boxed"></i></a>
-                      <a class="" href="portfolio-single-1.html"><i class="ei ei-link"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
-          <!-- <div class="folio-item photography">
-            <div class="folio-style-4">
-              <div class="folio-image">
-                <img class="img-responsive" src="assets/images/portfolio/folio-29.jpg" alt="">
-              </div>
-              <div class="overlay">
-                <div class="folio-caption">
-                  <div class="folio-content">
-                    <div class="folio-info">
-                      <h3 class="folio-tittle">The Card</h3>
-                      <span class="folio-sub-title">Branding / Graphic</span>
-                    </div>
-                    <span class="divider"></span>
-                    <div class="folio-action">
-                      <a class="lightbox-img" href="assets/images/portfolio/folio-29.jpg" title="The Card"><i class="ei ei-plus-boxed"></i></a>
-                      <a class="" href="portfolio-single-1.html"><i class="ei ei-link"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
-          <!-- <div class="folio-item web-design">
-            <div class="folio-style-4">
-              <div class="folio-image">
-                <img class="img-responsive" src="assets/images/portfolio/folio-31.jpg" alt="">
-              </div>
-              <div class="overlay">
-                <div class="folio-caption">
-                  <div class="folio-content">
-                    <div class="folio-info">
-                      <h3 class="folio-tittle">The Card</h3>
-                      <span class="folio-sub-title">Branding / Graphic</span>
-                    </div>
-                    <span class="divider"></span>
-                    <div class="folio-action">
-                      <a class="lightbox-img" href="assets/images/portfolio/folio-31.jpg" title="The Card"><i class="ei ei-plus-boxed"></i></a>
-                      <a class="" href="portfolio-single-1.html"><i class="ei ei-link"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
         </div>
       </div>
     </section>

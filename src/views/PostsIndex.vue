@@ -12,14 +12,14 @@
       </div>
     </div>
 
-    <div v-if="$parent.isLoggedIn()" class="container">
+    <div v-if="$parent.isLoggedIn()" class="text-center">
       <h2 class="mrg-btm-20 mrg-top-5"><router-link to="/recipes">Let Green Goals help you find a green recipe!</router-link></h2>
     </div>
 
     <!-- Blog list full width -->
     <!-- <section class="section-1"> -->
      <div class="container">
-      <div class="blog blog-list" v-for="post in orderBy(filterBy(posts, titleFilter, 'title'), 'id', sortById).slice(0,5)">
+      <div class="blog blog-list" v-for="post in orderBy(filterBy(posts, titleFilter, 'title'), 'id', sortById).slice(0, 5)">
         <div class="blog-item">
           <div class="row">
             <div class="col-md-4">
@@ -32,8 +32,8 @@
                 <h3 class="blog-tittle"><router-link v-bind:to="`/posts/${post.id}`">{{ post.title }}</router-link></h3>
                 <div class="blog-meta">
                   <span class="author">By <a class="theme-color">{{ post.user_name }}</a></span>
-                  <h5 class="author">Category: {{ post.category_name }}</h5>
                   <span class="date">Created: {{ relativeDate(post.created_at) }}</span>
+                  <h4 class="blog-meta author">Category: {{ post.category_name }}</h4>
                 </div>
                 <p v-if="post.body.length > 300" class="blog-article">{{ post.body.slice(0, 300) }}...</p>
                 <p v-else class="blog-article">{{ post.body }}</p>
