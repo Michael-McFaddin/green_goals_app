@@ -106,27 +106,6 @@
       </div>
     </div>
 
-
-    <!-- <div class="container">
-      <form v-on:submit.prevent="submit()">
-        <h1>Login</h1>
-        <div>
-          <ul>
-            <li class="text-danger" v-for="error in errors">{{ error }}</li>
-          </ul>
-        </div>
-        <div class="form-group">
-          <label>Email:</label>
-          <input type="email" class="form-control" v-model="email">
-        </div>
-        <div class="form-group">
-          <label>Password:</label>
-          <input type="password" class="form-control" v-model="password">
-        </div>
-        <input type="submit" class="btn btn-primary" value="Submit">
-      </form>
-    </div> -->
-
   </div>
 </template>
 

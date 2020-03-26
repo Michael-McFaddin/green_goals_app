@@ -11,7 +11,6 @@
               <li v-for="error in errors">{{ error }}</li>
             </ul>
           </div>
-
           <div class="row">
             <div class="form-group col-md-6">
               Category<select class="form-control" v-model="post.category_id">
@@ -59,62 +58,6 @@
         <button class="btn btn-sn btn-danger" v-on:click="destroyImage(image)">Remove</button>
       </div>
     </div>
-
-
-    <!-- <h1>Edit Your Post</h1>
-    <div class="container">
-      <form v-on:submit.prevent="updatePost()">
-        <ul>
-          <li v-for="error in errors">{{ error }}</li>
-        </ul>
-        <div>
-          <select v-model="post.category_id">
-            <option disable value="">Select A Category</option>
-            <option value="1">Food</option>
-            <option value="2">Waste</option>
-            <option value="3">Energy</option>
-            <option value="4">Transportation</option>
-            <option value="5">Water</option>
-            <option value="6">Social</option>
-          </select>
-        </div>
-        <div>
-          <label>Title:</label>
-          <input type="text" v-model="post.title">
-        </div>
-        <div>
-          <label>Body:</label>
-          <textarea v-model="post.body" name="" id="" cols="30" rows="10"></textarea>
-        </div>
-        <input type="submit" value="Submit"><br>
-      </form><br>
-    </div>
-    <div>
-      <button v-on:click="destroyPost()">Delete Post</button><br><br>
-    </div> -->
-
-
-    <!-- <div>
-      <form v-on:submit.prevent="createImage()">
-        <div>
-          <label>Add Image:</label>
-          <input type="file" v-on:change="setFile($event)" ref="fileInput">
-        </div>
-        <input type="submit" value="Submit"><br><br>
-      </form>
-    </div> -->
-
-
-    <!-- <div v-for="image in post.images">
-      <img :src="image.url" alt=""><br>
-      <button v-on:click="destroyImage(image)">Remove</button>
-    </div> -->
-
-    <!-- <div>
-      <label>Image Url:</label>
-      <input type="text" v-model="newImageUrl">
-    </div> -->
-    
     
   </div>
 </template>

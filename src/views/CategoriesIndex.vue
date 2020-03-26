@@ -1,9 +1,5 @@
 <template>
-  <div class="categories-index">
-
-    <!-- <div class="container text-center mrg-top-30">
-        <h2 class="mrg-btm-40">Select a Category and see what people are posting.</h2>
-    </div> -->  
+  <div class="categories-index">  
 
     <!-- Page Tittle Start -->
     <section class="page-tittle page-tittle-sm bg-white">
@@ -45,14 +41,7 @@
       </div>
     </section>
     <!-- Portfolio End -->
-
-    <!-- <div v-for="category in categories">
-      <h1>{{ category.name }}</h1>
-      <img :src="category.image_url" alt=""><br>
-      <router-link :to="`/categories/${category.id}`">Posts</router-link>
-    </div> -->
   
-
   </div>
 </template>
 

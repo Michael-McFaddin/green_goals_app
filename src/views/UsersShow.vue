@@ -1,7 +1,6 @@
 <template>
   <div class="users-show">
 
-    <!-- Page Tittle Start -->
     <section class="section-5 bg-dark">
       <div class="container">
         <div class="row">
@@ -23,14 +22,6 @@
         </div>
       </div>
     </section>
-<!-- Page Tittle End -->
-
-
-    <!-- <h1>Hello {{ user.first_name }}!</h1>
-    <h3>{{ user.first_name }} {{ user.last_name }}</h3>
-    <h3>User Name: {{ user.user_name }}</h3>
-    <h3>Email: {{ user.email }}</h3>
-    <router-link v-bind:to="`/users/${user.id}/edit`">Edit User</router-link> -->
 
   </div>
 </template>

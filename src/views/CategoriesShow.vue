@@ -79,8 +79,6 @@
                 <p v-if="post.body.length > 300" class="blog-article">{{ post.body.slice(0, 300) }}...</p>
                 <p v-else class="blog-article">{{ post.body }}</p>
                 <div class="blog-action">
-                  <!-- <span class="comments"><a href="javascript:void(0);"><i class="ei ei-speech-bubble"></i> 20</a></span> -->
-                  <!-- <span class="likes"><a href="javascript:void(0);"><i class="ei ei-heart"></i> 168</a></span> -->
                   <span></span>
                 </div>
                 <div class="continue-reading">
@@ -98,30 +96,10 @@
     <!-- </section> -->
     <!-- Blog End -->
 
-    <!-- <div class="container">
-      <h1>{{ category.name }}</h1>
-      Search by Title: <input type="text" v-model="titleFilter"><br>
-      <button v-bind:class="{'button': sortById == -1}" v-on:click="sortById = -1 ">Sort by new to old</button>
-      <button v-bind:class="{'button': sortById == 1}" v-on:click="sortById = 1 ">Sort by old to new</button> 
-    </div> -->
-
-    <!-- <div v-for="post in orderBy(filterBy(category.posts, titleFilter, 'title'), 'id', sortById)">
-      <h2>{{ post.title }}</h2>
-      <h4>{{ post.user_name }}</h4>
-      <p>{{ post.body }}</p>
-      <img :src="post.image" alt=""><br>
-      <router-link v-bind:to="`/posts/${post.id}`">Details</router-link><br><br>
-    </div> -->
-
-
   </div>
 </template>
 
 <style>
-/*img {
-  width: 250px;
-}*/
-
 </style>
 
 <script>

@@ -24,25 +24,7 @@
     </section>
     <!-- Portfolio Content End -->
 
-    <!-- <section class="footer-nav col-3">
-      <div class="container-fluid">
-        <a href="portfolio-single-3.html" class="footer-nav-item text-center">
-          <span class="font-size-17"><i class="ei ei-left-arrow mrg-right-10"></i> Prev</span>
-        </a>
-        <a href="#" class="footer-nav-item text-center">
-          <span class="font-size-17"><i class="ei ei-menu-7"></i></span>
-        </a>
-        <a href="portfolio-single-2.html" class="footer-nav-item text-center">
-          <span class="font-size-17">Next <i class="ei ei-right-arrow mrg-left-10"></i></span>
-        </a>
-      </div>
-    </section> -->
-
-
-
-
     <!-- <h1>Post Show</h1>
-
     <div>
       <h3>{{ post.title }}</h3>
       <h4>{{ post.user_name }}</h4>
@@ -51,9 +33,9 @@
           <img v-bind:src="image.url" alt="">
         </div>
         <router-link v-if="post.user_id == $parent.getUserId()" v-bind:to="`/posts/${post.id}/edit`">Edit Post</router-link><br><br>
-        <button v-if="!post.favorite && $parent.isLoggedIn()" v-on:click="createFavorite()">Favorite</button> -->
-        <!-- <button v-if="post.favorite" v-on:click="destroyFavorite()">UnFavorite</button> -->
-    <!-- </div> -->
+        <button v-if="!post.favorite && $parent.isLoggedIn()" v-on:click="createFavorite()">Favorite</button>
+        <button v-if="post.favorite" v-on:click="destroyFavorite()">UnFavorite</button>
+    </div> -->
 
  <!--    <div>
       <p>{{ post.favorite_id }}</p>
