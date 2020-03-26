@@ -13,8 +13,8 @@
              <span class="sr-only">Toggle Dropdown</span>
             </button>
             <div class="nav-logo">
-              <a class="logo" href="index.html"><img class="logo-light" src="assets/images/logo/logo-1.png" alt="Eastern"></a>
-              <a class="logo" href="index.html"><img class="logo-dark" src="assets/images/logo/logo-2.png" alt="Eastern"></a>
+              <a class="logo" href="index.html"><img class="logo-light" src="assets/images/logo/green_goals_white.png" alt="Eastern"></a>
+              <a class="logo" href="index.html"><img class="logo-dark" src="assets/images/logo/green_goals_logo.png" alt="Eastern"></a>
             </div>                          
           </div>
           <div class="collapse navbar-collapse nav-collapse">
@@ -58,8 +58,8 @@
       <img class="kenburn-img" src="assets/images/greengoals_3.jpg" alt="">
       <div class="container">
         <div class="page-tittle-head">
-          <h2>Green Goals</h2>
-          <p>Subtittle Goes Here</p>
+          <h2>Share Your Green Goals With Others</h2>
+          <h4>Green Goals is a place to share tips, trick and knowledge on how to lead a sustainable lifestyle.</h4>
         </div>
         <!-- <ol class="breadcrumb pull-right mrg-top-30">
           <li class="breadcrumb-item"><a href="#">Features</a></li>

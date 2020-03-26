@@ -1,22 +1,46 @@
 <template>
   <div class="categories-show">
 
-        <!-- Page Tittle Start -->
-        <section class="page-tittle page-tittle-sm">
-          <div class="container">
-            <div class="page-tittle-head">
-              <h2>{{ category.name }}</h2>
-              <p>Subtittle Goes Here</p>
-            </div>
-              <!-- <ol class="breadcrumb pull-right mrg-top-30">
-                <li class="breadcrumb-item"><a href="#">Features</a></li>
-                <li class="breadcrumb-item"><a href="#">Page Tittle</a></li>
-                <li class="breadcrumb-item"><a href="#">Size</a></li>
-                <li class="breadcrumb-item active">Page Tittle Medium</li>
-              </ol> -->
-          </div>
-        </section>
-        <!-- Page Tittle End -->
+    <!-- Page Tittle Start -->
+    <!-- <section class="page-tittle page-tittle-lg bg dark-overlay" style="background-image: url('assets/images/bg-18.jpg')">
+      <div class="container">
+        <div class="page-tittle-head">
+          <h2>Stactic Background</h2>
+          <p>Subtittle Goes Here</p>
+        </div>
+          <ol class="breadcrumb pull-right mrg-top-30">
+          <li class="breadcrumb-item"><a href="#">Features</a></li>
+          <li class="breadcrumb-item"><a href="#">Page Tittle</a></li>
+          <li class="breadcrumb-item active">Stactic Background</li>
+        </ol>
+      </div>
+    </section> -->
+    <!-- Page Tittle End -->
+
+    <!-- Page Tittle Start -->
+    <!-- <section class="page-tittle page-tittle-sm">
+      <div class="container">
+        <div class="page-tittle-head">
+          <h2>{{ category.name }}</h2>
+          <p>Subtittle Goes Here</p>
+        </div>
+          <ol class="breadcrumb pull-right mrg-top-30">
+            <li class="breadcrumb-item"><a href="#">Features</a></li>
+            <li class="breadcrumb-item"><a href="#">Page Tittle</a></li>
+            <li class="breadcrumb-item"><a href="#">Size</a></li>
+            <li class="breadcrumb-item active">Page Tittle Medium</li>
+          </ol>
+      </div>
+    </section> -->
+    <!-- Page Tittle End -->
+
+    <section class="page-tittle page-tittle-sm bg-white">
+      <div class="container">               
+        <div class="page-tittle-head display-block text-center">
+        <h1 class="font-size-45 font-weight-light ls-1-5">{{ category.name }}</h1>
+        </div>
+      </div>
+    </section>
 
     <div class="widget widget-search container text-center">
       <div class="mrg-btm-15 mrg-top-15">

@@ -19,7 +19,7 @@
     <!-- Blog list full width -->
     <!-- <section class="section-1"> -->
      <div class="container">
-      <div class="blog blog-list" v-for="post in orderBy(filterBy(posts, titleFilter, 'title'), 'id', sortById).slice(0, 5)">
+      <div class="blog blog-list" v-for="post in orderBy(filterBy(posts, titleFilter, 'title'), 'id', sortById).slice(0, 40)">
         <div class="blog-item">
           <div class="row">
             <div class="col-md-4">

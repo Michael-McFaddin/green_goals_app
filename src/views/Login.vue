@@ -90,7 +90,7 @@
           </div>
         </div>  
         <div class="image-container col-md-5 hidden-xs hidden-sm">
-          <div class="background-holder theme-overlay has-content" style="background-image:url(assets/images/bg-18.jpg)">
+          <div class="background-holder theme-overlay has-content" style="background-image:url(assets/images/leaf_background3.jpg)">
             <div class="content pdd-horizon-50">
               <h3 class="mrg-btm-20 text-white">Don't have a Green Goals account? Sign Up Now!</h3>
               <!-- <p class="text-white font-size-14">This Modal is locked on, but you can optionaly turn this fucntion off.</p> -->
@@ -156,7 +156,7 @@ export default {
           localStorage.setItem("jwt", response.data.jwt);
           localStorage.setItem("user_id", response.data.user_id);
           $('#login').modal('hide');
-          this.$router.push("/posts");
+          this.$router.push("/categories");
         })
         .catch(error => {
           this.errors = ["Invalid email or password."];
