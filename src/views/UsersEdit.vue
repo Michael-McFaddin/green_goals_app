@@ -70,7 +70,6 @@ export default {
       });
   },
 
-
   methods: {
     updateUser: function(user) {
       var params = {

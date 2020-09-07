@@ -65,9 +65,6 @@ export default {
       newCategoryId: "",
       newTitle: "",
       newBody: "",
-      // newImageUrl1: "",
-      // newImageUrl2: "",
-      // newImageUrl3: "",
       image1: "",
       image2: "",
       image3: "",
@@ -90,12 +87,6 @@ export default {
       }
     },
     createPost: function() {
-      // var params = {
-      //   category_id: this.newCategoryId,
-      //   title: this.newTitle,
-      //   body: this.newBody,
-      //   images: images
-      // };
       var formData = new FormData();
 
       formData.append("category_id", this.newCategoryId);

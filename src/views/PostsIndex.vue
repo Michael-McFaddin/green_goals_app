@@ -17,7 +17,6 @@
     </div>
 
     <!-- Blog list full width -->
-    <!-- <section class="section-1"> -->
      <div class="container">
       <div class="blog blog-list" v-for="post in orderBy(filterBy(posts, titleFilter, 'title'), 'id', sortById).slice(0, `${showNum}`)">
         <div class="blog-item">

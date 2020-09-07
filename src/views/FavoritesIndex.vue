@@ -5,7 +5,7 @@
       <div class="container">               
         <div class="page-tittle-head display-block text-center">
           <h1 class="font-size-45 font-weight-light ls-1-5">You need some Favorites!</h1>
-          <h3>Check out some of the other posts and add to your favoites</h3>
+          <h3>Check out some of the other posts and add to your favorites</h3>
           <div class="text-center">
             <router-link class="btn btn-md btn-theme" to="/posts">All Posts</router-link>
           </div>
