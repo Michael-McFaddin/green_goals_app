@@ -69,15 +69,22 @@
       <!-- </div> -->
     <!-- </section> -->
 
-    <div style="position: relative; text-align: center;">
+    <!-- <div style="position: relative; text-align: center;">
       <img style="width: 100%;" src="assets/images/greengoals_4.jpg" alt="">
-      <!-- <div class="container page-tittle"> -->
         <div class="bottom-left">
-            <h2 style="text-align: left; color: white;">Share Your Green Goals With Others</h2>
-            <h4 style="text-align: left; color: white;">Green Goals is a place to share tips, trick and knowledge on how to lead a sustainable lifestyle.</h4>
+            <h2 class="title-text1">Share Your Green Goals With Others</h2>
+            <h4 class="title-text2">Green Goals is a place to share tips, trick and knowledge on how to lead a sustainable lifestyle.</h4>
         </div>
-      <!-- </div> -->
+    </div> -->
+
+    <div class="hero">
+      <!-- <img style="width: 100%;" src="assets/images/greengoals_4.jpg" alt=""> -->
+        <div class="bottom-left">
+          <h2 class="title-text1">Share Your Green Goals With Others</h2>
+          <h4 class="title-text2">Green Goals is a place to share tips, trick and knowledge on how to lead a sustainable lifestyle.</h4>
+        </div>
     </div>
+    
 
 
     <!-- Page Title End -->

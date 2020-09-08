@@ -72,10 +72,44 @@
 	/* padding-right: 20px; */
 }
 
+.title-text1 {
+	text-align: left;
+	color: white;
+	font-size: 2.7vw;
+	font-weight: bold;
+}
+
+.title-text2 {
+	text-align: left;
+	color: white;
+	font-size: 2.2vw;
+}
+
 .bottom-left {
 	position: absolute;
 	bottom: 30px;
 	left: 16px;
+}
+
+.hero {
+	position: relative;
+	height: 50vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-image: url('greengoals_4.jpg');
+	background-size: cover;
+}
+
+.hero::before {
+	content: '';
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	background-color: rgba(0, 0, 0, 0.4);
 }
 
 /*----------------------------
