@@ -26,6 +26,9 @@
             <div class="form-group col-md-6">
               Title<input type="text" class="form-control" placeholder="Title" v-model="post.title">
             </div>
+            <div>
+              Body<vue-editor v-model="post.body" />
+            </div>
             <div class="form-group col-md-12">
               Body<textarea class="form-control" rows="3" placeholder="Body" v-model="post.body"></textarea>
             </div>
@@ -67,10 +70,13 @@
 
 <script>
 import axios from 'axios';
+import { VueEditor } from 'vue2-editor';
 
 export default {
+  components: { VueEditor },
   data: function() {
     return {
+      // content: this.post.body,
       post: {},
       errors: [],
       image: "",

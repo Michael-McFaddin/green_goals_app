@@ -37,7 +37,7 @@
                   </div>
                   <p v-if="post.body.length > 300" class="blog-article">{{ post.body.slice(0, 300) }}...</p>
                   <p v-else class="blog-article">{{ post.body }}</p>
-        
+                  <div v-html="post.body"></div>
                   <div class="blog-action">
                     <span></span>
                   </div>
@@ -66,7 +66,6 @@
 import axios from 'axios';
 import moment from 'moment';
 import Vue2Filters from 'vue2-filters';
-// import animate from 'animate.css';
 
 export default {
   mixins: [Vue2Filters.mixin],

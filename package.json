@@ -13,6 +13,7 @@
     "moment": "^2.27.0",
     "vue": "^2.6.12",
     "vue-router": "^3.4.3",
+    "vue2-editor": "^2.10.2",
     "vue2-filters": "^0.10.0"
   },
   "devDependencies": {

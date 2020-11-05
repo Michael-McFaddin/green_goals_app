@@ -26,10 +26,12 @@
             <div class="form-group col-md-6">
               Title<input type="text" class="form-control" placeholder="Title" v-model="newTitle">
             </div>
-            <div class="form-group col-md-12">
+            <!-- <div class="form-group col-md-12">
               Body<textarea class="form-control" rows="3" placeholder="Body" v-model="newBody"></textarea>
+            </div> -->
+            <div class="form-group col-md-12">
+              Body<vue-editor v-model="content" />
             </div>
-
             <div class="form-group col-md-12">
               <label>Image 1:</label>
               <input type="file" class="form-control" v-on:change="setFile($event, 1)" ref="fileInput">
@@ -58,16 +60,19 @@
 
 <script>
 import axios from 'axios';
+import { VueEditor } from 'vue2-editor';
 
 export default {
+  components: { VueEditor },
   data: function() {
     return {
       newCategoryId: "",
       newTitle: "",
-      newBody: "",
+      // newBody: "<h1>Start typing here...</h1>",
       image1: "",
       image2: "",
       image3: "",
+      content: "<h1>Start typing here...</h1>",
       errors: []
     };
   },
@@ -91,7 +96,8 @@ export default {
 
       formData.append("category_id", this.newCategoryId);
       formData.append("title", this.newTitle);
-      formData.append("body", this.newBody);
+      formData.append("body", this.content);
+      // formData.append("body", this.newBody);
       if (this.image1) {
         formData.append("image1", this.image1);
       }

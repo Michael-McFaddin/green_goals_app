@@ -10,7 +10,8 @@
         <div class="row">
           <div class="col-md-5">
             <h2 class="mrg-btm-30">{{ post.title }}</h2>
-            <p>{{ post.body }}</p>
+            <!-- <p>{{ post.body }}</p> -->
+            <div v-html="post.body"></div>
             <p class="mrg-top-30"><b class="text-dark">Created By:</b> {{ post.user_name }}</p>
             <div class="mrg-btm-15">
               <router-link class="btn btn-sm btn-dark-inverse" v-if="post.user_id == $parent.getUserId()" v-bind:to="`/posts/${post.id}/edit`">Edit Post</router-link>
@@ -26,23 +27,6 @@
       </div>
     </section>
     <!-- Portfolio Content End -->
-
-    <!-- <h1>Post Show</h1>
-    <div>
-      <h3>{{ post.title }}</h3>
-      <h4>{{ post.user_name }}</h4>
-      <p>{{ post.body }}</p>
-        <div v-for="image in post.images">
-          <img v-bind:src="image.url" alt="">
-        </div>
-        <router-link v-if="post.user_id == $parent.getUserId()" v-bind:to="`/posts/${post.id}/edit`">Edit Post</router-link><br><br>
-        <button v-if="!post.favorite && $parent.isLoggedIn()" v-on:click="createFavorite()">Favorite</button>
-        <button v-if="post.favorite" v-on:click="destroyFavorite()">UnFavorite</button>
-    </div> -->
-
- <!--    <div>
-      <p>{{ post.favorite_id }}</p>
-    </div> -->
 
   </div>
 </template>
