@@ -365,25 +365,25 @@ var Eastern = (function() {
 	};
 
 	//Magnific Popup
-	var magnificPopup = function() {
-		$('.lightbox-img').magnificPopup({
-			type: 'image',
-			gallery: {
-				enabled: true,
-			},
-			removalDelay: 160,
-			mainClass: 'mfp-fade',
-		});
+	// var magnificPopup = function() {
+	// 	$('.lightbox-img').magnificPopup({
+	// 		type: 'image',
+	// 		gallery: {
+	// 			enabled: true,
+	// 		},
+	// 		removalDelay: 160,
+	// 		mainClass: 'mfp-fade',
+	// 	});
 
-		$('.lightbox-video').magnificPopup({
-			disableOn: 700,
-			type: 'iframe',
-			mainClass: 'mfp-fade',
-			removalDelay: 160,
-			preloader: false,
-			fixedContentPos: false,
-		});
-	};
+	// 	$('.lightbox-video').magnificPopup({
+	// 		disableOn: 700,
+	// 		type: 'iframe',
+	// 		mainClass: 'mfp-fade',
+	// 		removalDelay: 160,
+	// 		preloader: false,
+	// 		fixedContentPos: false,
+	// 	});
+	// };
 
 	// Counter
 	// var counterPlugin = function() {
@@ -527,7 +527,7 @@ var Eastern = (function() {
 			animatedHref(); // Animated Href Control
 			// swiperSlider(); // Swiper Slider Control
 			parallaxScroll(); // Parallax Scroll Control
-			magnificPopup(); // Magnific Popup Control
+			// magnificPopup(); // Magnific Popup Control
 			// counterPlugin(); // Counter Control
 			progressBar(); // Progress Bar Control
 			// youtubePlayer(); // YoutubePlayer Control
