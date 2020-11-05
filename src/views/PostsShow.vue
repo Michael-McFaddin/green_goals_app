@@ -3,6 +3,9 @@
 
     <!-- Portfolio Content Start -->
     <section class="section-1">
+      <div class="container continue-reading">
+        <router-link class="btn btn-dark-inverse" v-bind:to="`/posts`"><i class="ei ei-left-arrow"></i> Back</router-link>
+      </div>
       <div class="container">
         <div class="row">
           <div class="col-md-5">
@@ -48,38 +51,34 @@
 </style>
 
 <script>
-import axios from 'axios';
+import axios from "axios";
 
 export default {
-  data: function() {
+  data: function () {
     return {
       post: {},
     };
   },
 
-  created: function() {
-    axios
-      .get("api/posts/" + this.$route.params.id)
-      .then(response => {
-        this.post = response.data;
-        console.log(response.data);
-      });
+  created: function () {
+    axios.get("api/posts/" + this.$route.params.id).then((response) => {
+      this.post = response.data;
+      console.log(response.data);
+    });
   },
 
   methods: {
-    createFavorite: function() {
+    createFavorite: function () {
       var params = {
-        post_id: this.post.id
+        post_id: this.post.id,
       };
-      axios
-        .post("/api/favorites", params)
-        .then(response => {
-          console.log("You Favorited this post.");
-          this.post.favorite = true;
-        });
-    }
+      axios.post("/api/favorites", params).then((response) => {
+        console.log("You Favorited this post.");
+        this.post.favorite = true;
+      });
+    },
   },
   //put destroyFavorites here
-// this.post.favorite = false
+  // this.post.favorite = false
 };
 </script>

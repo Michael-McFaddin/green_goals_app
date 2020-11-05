@@ -13,8 +13,10 @@
              <span class="sr-only">Toggle Dropdown</span>
             </button>
             <div class="nav-logo">
-              <a class="logo" href="index.html"><img class="logo-light" src="assets/images/logo/green_goals_white.png" alt="Eastern"></a>
-              <a class="logo" href="index.html"><img class="logo-dark" src="assets/images/logo/green_goals_logo.png" alt="Eastern"></a>
+              <!-- <a class="logo" href="index.html"><img class="logo-light" src="/assets/images/logo/green_goals_white.png" alt="Eastern"></a> -->
+              <!-- <a class="logo" href="index.html"><img class="logo-dark" src="/assets/images/logo/green_goals_logo.png" alt="Eastern"></a> -->
+              <router-link tag="a" class="logo" :to="{ name: 'categories-index' }"><img class="logo-light" src="/assets/images/logo/green_goals_white.png" alt="Eastern"></router-link>
+              <router-link tag="a" class="logo" :to="{ name: 'categories-index' }"><img class="logo-dark" src="/assets/images/logo/green_goals_logo.png" alt="Eastern"></router-link>
             </div>                          
           </div>
           <div class="collapse navbar-collapse nav-collapse">
@@ -24,7 +26,30 @@
               </li>
               <li class="nav-item dropdown">
                 <router-link to="/categories">Categories</router-link>
-              </li>
+              </li >
+              <!-- <li class="nav-item dropdown">
+                <a class="dropdown-toggle" href="javascript:void(0);">Categories<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <router-link to="/categories/1" exact>Food</router-link>
+                  </li>
+                  <li>
+                    <router-link to="/categories/2" exact>Waste</router-link>
+                  </li>
+                  <li>
+                    <router-link to="/categories/3" exact>Energy</router-link>
+                  </li>
+                  <li>
+                    <router-link to="/categories/4" exact>Transportation</router-link>
+                  </li>
+                  <li>
+                    <router-link to="/categories/5" exact>Water</router-link>
+                  </li>
+                  <li>
+                    <router-link to="/categories/6" exact>Social</router-link>
+                  </li>
+                </ul>
+              </li> -->
               <li class="nav-item dropdown">
                 <router-link v-if="isLoggedIn()" to="/posts/new">New Post</router-link>
               </li>
@@ -81,7 +106,7 @@
       <!-- <img style="width: 100%;" src="assets/images/greengoals_4.jpg" alt=""> -->
         <div class="bottom-left">
           <h2 class="title-text1">Share Your Green Goals With Others</h2>
-          <h4 class="title-text2">Green Goals is a place to share tips, trick and knowledge on how to lead a sustainable lifestyle.</h4>
+          <h4 class="title-text2">Green Goals is a place to share tips, tricks and knowledge on how to lead a sustainable lifestyle.</h4>
         </div>
     </div>
     

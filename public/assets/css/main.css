@@ -51,26 +51,6 @@
 42. Blog Single Post
 
 ----------------------------------------------------------------------------*/
-.fullsize {
-	width: 100%;
-	height: auto;
-	/* opacity: 0.7; */
-}
-
-.overlay {
-	background: black;
-	overflow: hidden;
-}
-
-.text-block {
-	/* position: absolute; */
-	/* bottom: 20px; */
-	/* right: 20px; */
-	background-color: transparent;
-	color: white;
-	/* padding-left: 20px; */
-	/* padding-right: 20px; */
-}
 
 .title-text1 {
 	text-align: left;
@@ -98,7 +78,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-image: url('greengoals_4.jpg');
+	background-image: url('../images/greengoals_4.jpg');
 	background-size: cover;
 }
 
@@ -116,7 +96,7 @@
 --------- 1. General ---------
 ----------------------------*/
 
-@import url(
+/* @import url(
 	https://fonts.googleapis.com/css?family=Roboto+Condensed:400,
 	300,
 	700
@@ -124,7 +104,7 @@
 @import url(https://fonts.googleapis.com/css?family=PT+Sans:400, 700);
 html {
 	overflow-x: hidden;
-}
+} */
 
 html,
 html a,
@@ -460,11 +440,11 @@ section {
 	position: absolute;
 	top: -50%;
 	left: 0px;
-	/* -webkit-animation: kenburn 60s infinite; */
-	/* -moz-animation: kenburn 60s infinite; */
-	/* -ms-animation: kenburn 60s infinite; */
-	/* -o-animation: kenburn 60s infinite; */
-	/* animation: kenburn 60s infinite; */
+	-webkit-animation: kenburn 60s infinite;
+	-moz-animation: kenburn 60s infinite;
+	-ms-animation: kenburn 60s infinite;
+	-o-animation: kenburn 60s infinite;
+	animation: kenburn 60s infinite;
 	width: 100%;
 	height: auto;
 	z-index: 1;
