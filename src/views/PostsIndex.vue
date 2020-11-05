@@ -17,37 +17,39 @@
     </div>
 
     <!-- Blog list full width -->
-     <div class="container">
-      <div class="blog blog-list" v-for="post in orderBy(filterBy(posts, titleFilter, 'title'), 'id', sortById).slice(0, `${showNum}`)">
-        <div class="blog-item">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="blog-media">
-                <router-link v-bind:to="`/posts/${post.id}`"><img class="img-responsive" v-bind:src="post.image" alt=""></router-link>
+    <div class="container">
+      <transition-group mode="out-in" enter-active-class="animate__animated animate__fadeIn" leave-active-class="animate__animated animate__fadeOut">
+        <div v-bind:key="post.id" class="blog blog-list" v-for="post in orderBy(filterBy(posts, titleFilter, 'title'), 'id', sortById).slice(0, `${showNum}`)">
+          <div class="blog-item">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="blog-media">
+                  <router-link v-bind:to="`/posts/${post.id}`"><img class="img-responsive" v-bind:src="post.image" alt=""></router-link>
+                </div>
               </div>
-            </div>
-            <div class="col-md-8">
-              <div class="blog-content">
-                <h3 class="blog-tittle"><router-link v-bind:to="`/posts/${post.id}`">{{ post.title }}</router-link></h3>
-                <div class="blog-meta">
-                  <span class="author">By <a class="theme-color">{{ post.user_name }}</a></span>
-                  <span class="date">Created: {{ relativeDate(post.created_at) }}</span>
-                  <h4 class="blog-meta author">Category: {{ post.category_name }}</h4>
+              <div class="col-md-8">
+                <div class="blog-content">
+                  <h3 class="blog-tittle"><router-link v-bind:to="`/posts/${post.id}`">{{ post.title }}</router-link></h3>
+                  <div class="blog-meta">
+                    <span class="author">By <a class="theme-color">{{ post.user_name }}</a></span>
+                    <span class="date">Created: {{ relativeDate(post.created_at) }}</span>
+                    <h4 class="blog-meta author">Category: {{ post.category_name }}</h4>
+                  </div>
+                  <p v-if="post.body.length > 300" class="blog-article">{{ post.body.slice(0, 300) }}...</p>
+                  <p v-else class="blog-article">{{ post.body }}</p>
+        
+                  <div class="blog-action">
+                    <span></span>
+                  </div>
+                  <div class="continue-reading">
+                    <router-link class="btn btn-dark-inverse" v-bind:to="`/posts/${post.id}`"><i class="ei ei-right-arrow"></i></router-link>
+                  </div>      
                 </div>
-                <p v-if="post.body.length > 300" class="blog-article">{{ post.body.slice(0, 300) }}...</p>
-                <p v-else class="blog-article">{{ post.body }}</p>
-       
-                <div class="blog-action">
-                  <span></span>
-                </div>
-                <div class="continue-reading">
-                  <router-link class="btn btn-dark-inverse" v-bind:to="`/posts/${post.id}`"><i class="ei ei-right-arrow"></i></router-link>
-                </div>      
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </transition-group>
       <!-- {{ showNum }} -->
       <div class="text-center mrg-top-50">
         <button v-on:click="showMore()" class="btn btn-dark btn-md">Show More</button>
@@ -64,6 +66,7 @@
 import axios from 'axios';
 import moment from 'moment';
 import Vue2Filters from 'vue2-filters';
+// import animate from 'animate.css';
 
 export default {
   mixins: [Vue2Filters.mixin],
