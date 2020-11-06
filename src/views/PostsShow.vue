@@ -38,13 +38,13 @@
 import axios from "axios";
 
 export default {
-  data: function () {
+  data: function() {
     return {
       post: {},
     };
   },
 
-  created: function () {
+  created: function() {
     axios.get("api/posts/" + this.$route.params.id).then((response) => {
       this.post = response.data;
       console.log(response.data);
@@ -52,7 +52,7 @@ export default {
   },
 
   methods: {
-    createFavorite: function () {
+    createFavorite: function() {
       var params = {
         post_id: this.post.id,
       };

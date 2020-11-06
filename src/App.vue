@@ -27,29 +27,6 @@
               <li class="nav-item dropdown">
                 <router-link to="/categories">Categories</router-link>
               </li >
-              <!-- <li class="nav-item dropdown">
-                <a class="dropdown-toggle" href="javascript:void(0);">Categories<span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <router-link to="/categories/1" exact>Food</router-link>
-                  </li>
-                  <li>
-                    <router-link to="/categories/2" exact>Waste</router-link>
-                  </li>
-                  <li>
-                    <router-link to="/categories/3" exact>Energy</router-link>
-                  </li>
-                  <li>
-                    <router-link to="/categories/4" exact>Transportation</router-link>
-                  </li>
-                  <li>
-                    <router-link to="/categories/5" exact>Water</router-link>
-                  </li>
-                  <li>
-                    <router-link to="/categories/6" exact>Social</router-link>
-                  </li>
-                </ul>
-              </li> -->
               <li class="nav-item dropdown">
                 <router-link v-if="isLoggedIn()" to="/posts/new">New Post</router-link>
               </li>
@@ -110,11 +87,8 @@
         </div>
     </div>
     
-
-
     <!-- Page Title End -->
 
-    
     <transition
       mode="out-in"
       enter-active-class="animate__animated animate__fadeIn"
@@ -132,14 +106,14 @@
 <script>
 export default {
   methods: {
-    isLoggedIn: function () {
+    isLoggedIn: function() {
       if (localStorage.getItem("jwt")) {
         return true;
       } else {
         return false;
       }
     },
-    getUserId: function () {
+    getUserId: function() {
       return localStorage.getItem("user_id");
     },
   },

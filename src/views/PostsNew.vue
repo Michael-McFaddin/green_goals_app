@@ -30,7 +30,7 @@
               Body<textarea class="form-control" rows="3" placeholder="Body" v-model="newBody"></textarea>
             </div> -->
             <div class="form-group col-md-12">
-              Body<vue-editor v-model="content" />
+              Body<vue-editor v-model="content" :editor-toolbar="customToolbar"/>
             </div>
             <div class="form-group col-md-12">
               <label>Image 1:</label>
@@ -66,13 +66,18 @@ export default {
   components: { VueEditor },
   data: function() {
     return {
+      content: "<p>Start typing here...</p>",
+      customToolbar: [
+        ["bold", "italic", "underline"],
+        [{ 'color': [] }],
+        [{ 'font': [] }]
+      ],
       newCategoryId: "",
       newTitle: "",
-      // newBody: "<h1>Start typing here...</h1>",
+      // newBody: "",
       image1: "",
       image2: "",
       image3: "",
-      content: "<h1>Start typing here...</h1>",
       errors: []
     };
   },

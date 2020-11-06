@@ -40,8 +40,12 @@
                   <span class="date">Created: {{ relativeDate(favorite.post.created_at) }}</span>
                   <h4 class="blog-meta author">Category: {{ favorite.post.category_name }}</h4>
                 </div>
-                <p v-if="favorite.post.body.length > 300" class="blog-article">{{ favorite.post.body.slice(0, 300) }}...</p>
-                <p v-else class="blog-article">{{ favorite.post.body }}</p>
+                <div >
+                  <p class="blog-article" v-if="favorite.post.body.length > 300" v-html="`${favorite.post.body.slice(0, 300)}.....`"></p>
+                  <p class="blog-article" v-else v-html="favorite.post.body"></p>
+                </div>
+                <!-- <p v-if="favorite.post.body.length > 300" class="blog-article">{{ favorite.post.body.slice(0, 300) }}...</p>
+                <p v-else class="blog-article">{{ favorite.post.body }}</p> -->
                 <div class="blog-action">
                   <div class="mrg-btm-15">
                     <a class="btn btn-md btn-theme-inverse" v-on:click="destroyFavorite(favorite)">Unfavorite</a>

@@ -35,9 +35,12 @@
                     <span class="date">Created: {{ relativeDate(post.created_at) }}</span>
                     <h4 class="blog-meta author">Category: {{ post.category_name }}</h4>
                   </div>
-                  <p v-if="post.body.length > 300" class="blog-article">{{ post.body.slice(0, 300) }}...</p>
-                  <p v-else class="blog-article">{{ post.body }}</p>
-                  <div v-html="post.body"></div>
+                  <div >
+                    <p class="blog-article" v-if="post.body.length > 300" v-html="`${post.body.slice(0, 300)}.....`"></p>
+                    <p class="blog-article" v-else v-html="post.body"></p>
+                  </div>
+                  <!-- <p v-if="post.body.length > 300" class="blog-article">{{ post.body.slice(0, 300) }}...</p> -->
+                  <!-- <p v-else class="blog-article">{{ post.body }}</p> -->
                   <div class="blog-action">
                     <span></span>
                   </div>

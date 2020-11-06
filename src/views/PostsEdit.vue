@@ -1,8 +1,11 @@
 <template>
   <div class="posts-edit">
 
-
     <div class="container">
+      <br>
+      <div>
+        <router-link class="btn btn-dark-inverse" v-bind:to="`/posts/${post.id}`"><i class="ei ei-left-arrow"></i> Back</router-link>
+      </div>
       <div class="col-md-6">
         <h2 class="mrg-btm-30">Edit Your Post</h2>
         <form v-on:submit.prevent="updatePost()">
@@ -26,21 +29,22 @@
             <div class="form-group col-md-6">
               Title<input type="text" class="form-control" placeholder="Title" v-model="post.title">
             </div>
-            <div>
-              Body<vue-editor v-model="post.body" />
-            </div>
             <div class="form-group col-md-12">
-              Body<textarea class="form-control" rows="3" placeholder="Body" v-model="post.body"></textarea>
+              Body<vue-editor v-model="post.body" :editor-toolbar="customToolbar" />
             </div>
+            <!-- <div class="form-group col-md-12">
+              Body<textarea class="form-control" rows="3" placeholder="Body" v-model="post.body"></textarea>
+            </div> -->
             <div class="form-group col-md-12">
               <input class="btn btn-md btn-dark" type="submit" value="Update Post">
             </div>
-            <div class="form-group col-md-12">
-              <input class="btn btn-md btn-danger" v-on:click="destroyPost()" type="submit" value="Delete Post">
-            </div>
+            
           </div>
         </form>
-      </div>
+        <div>
+          <input class="btn btn-md btn-danger" v-on:click="destroyPost()" type="submit" value="Delete Post">
+        </div>
+        </div>
     </div>
 
     <div class="container">
@@ -50,6 +54,7 @@
             <h3 class="mrg-btm-30">Add An Image</h3>
             <input type="file" class="form-control" v-on:change="setFile($event)" ref="fileInput">
           </div>
+          <br>
           <input class="btn btn-md btn-dark" type="submit" value="Add Image"><br><br>
         </form>
       </div>
@@ -76,6 +81,11 @@ export default {
   components: { VueEditor },
   data: function() {
     return {
+      customToolbar: [
+        ["bold", "italic", "underline"],
+        [{ 'color': [] }],
+        [{ 'font': [] }]
+      ],
       // content: this.post.body,
       post: {},
       errors: [],

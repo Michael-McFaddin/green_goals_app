@@ -60,7 +60,7 @@
     <!-- Blog list full width -->
     <!-- <section class="section-1"> -->
      <div class="container">
-      <div class="blog blog-list" v-for="post in orderBy(filterBy(category.posts, titleFilter, 'title'), 'id', sortById)">
+      <div class="blog blog-list" v-for="post in orderBy(filterBy(category.posts, titleFilter, 'title'), 'id', sortById).slice(0, `${showNum}`)">
         <div class="blog-item">
           <div class="row">
             <div class="col-md-4">
@@ -76,8 +76,12 @@
                   <span class="date">Created: {{ relativeDate(post.created_at) }}</span>
                   <h4 class="blog-meta author">Category: {{ category.name }}</h4>
                 </div>
-                <p v-if="post.body.length > 300" class="blog-article">{{ post.body.slice(0, 300) }}...</p>
-                <p v-else class="blog-article">{{ post.body }}</p>
+                <div >
+                  <p class="blog-article" v-if="post.body.length > 300" v-html="`${post.body.slice(0, 300)}.....`"></p>
+                  <p class="blog-article" v-else v-html="post.body"></p>
+                </div>
+                <!-- <p v-if="post.body.length > 300" class="blog-article">{{ post.body.slice(0, 300) }}...</p>
+                <p v-else class="blog-article">{{ post.body }}</p> -->
                 <div class="blog-action">
                   <span></span>
                 </div>
@@ -89,9 +93,9 @@
           </div>
         </div>
       </div>
-      <!-- <div class="text-center mrg-top-50">
-        <button class="btn btn-dark btn-md">Show More</button>
-      </div> -->
+      <div class="text-center mrg-top-50">
+        <button class="btn btn-dark btn-md" v-on:click="showMore()">Show More</button>
+      </div>
     </div>
     <!-- </section> -->
     <!-- Blog End -->
@@ -113,7 +117,8 @@ export default {
     return {
       category: {},
       titleFilter: "",
-      sortById: -1
+      sortById: -1,
+      showNum: 6
     };
   },
 
@@ -129,6 +134,9 @@ export default {
   methods: {
     relativeDate: function(date) {
       return moment(date).startOf('day').fromNow(date);
+    },
+    showMore: function() {
+      this.showNum = this.showNum + 6;
     }
   }
 };
