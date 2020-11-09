@@ -500,20 +500,20 @@ var Eastern = (function() {
   // 	});
   // };
 
-  var isotopeMasonry = function() {
-  	var $masonry = $('.masonry');
-  	$masonry.imagesLoaded(function() {
-  		$masonry.isotope({
-  			itemSelector: '.folio-item,.blog-item',
-  			layoutMode: 'masonry',
-  			percentPosition: true,
-  			resizable: false,
-  			isResizeBound: false,
-  		});
-  	});
+  // var isotopeMasonry = function() {
+  // 	var $masonry = $('.masonry');
+  // 	$masonry.imagesLoaded(function() {
+  // 		$masonry.isotope({
+  // 			itemSelector: '.folio-item,.blog-item',
+  // 			layoutMode: 'masonry',
+  // 			percentPosition: true,
+  // 			resizable: false,
+  // 			isResizeBound: false,
+  // 		});
+  // 	});
 
-  	$masonry.isotope();
-  };
+  // 	$masonry.isotope();
+  // };
 
   return {
     init: function() {

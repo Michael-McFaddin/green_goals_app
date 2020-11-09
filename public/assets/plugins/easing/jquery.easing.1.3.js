@@ -1,3 +1,10 @@
+/* eslint-disable brace-style */
+/* eslint-disable no-spaced-func */
+/* eslint-disable curly */
+/* eslint-disable eqeqeq */
+/* eslint-disable space-infix-ops */
+/* eslint-disable indent */
+/* eslint-disable space-before-function-paren */
 /*
  * jQuery Easing v1.3 - http://gsgd.co.uk/sandbox/jquery/easing/
  *
