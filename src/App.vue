@@ -13,40 +13,38 @@
              <span class="sr-only">Toggle Dropdown</span>
             </button>
             <div class="nav-logo">
-              <!-- <a class="logo" href="index.html"><img class="logo-light" src="/assets/images/logo/green_goals_white.png" alt="Eastern"></a> -->
-              <!-- <a class="logo" href="index.html"><img class="logo-dark" src="/assets/images/logo/green_goals_logo.png" alt="Eastern"></a> -->
               <router-link tag="a" class="logo" :to="{ name: 'categories-index' }"><img class="logo-light" src="/assets/images/logo/green_goals_white.png" alt="Eastern"></router-link>
               <router-link tag="a" class="logo" :to="{ name: 'categories-index' }"><img class="logo-dark" src="/assets/images/logo/green_goals_logo.png" alt="Eastern"></router-link>
             </div>                          
           </div>
           <div class="collapse navbar-collapse nav-collapse">
             <ul class="nav navbar-nav" >
-              <li class="nav-item dropdown">
-                <router-link to="/posts">All Posts</router-link>
+              <li>
+                <router-link   class="dropdown-toggle" to="/posts">All Posts</router-link>
               </li>
-              <li class="nav-item dropdown">
-                <router-link to="/categories">Categories</router-link>
+              <li>
+                <router-link  to="/categories">Categories</router-link>
               </li >
-              <li class="nav-item dropdown">
-                <router-link v-if="isLoggedIn()" to="/posts/new">New Post</router-link>
+              <li>
+                <router-link  v-if="isLoggedIn()" to="/posts/new">New Post</router-link>
               </li>
-              <li class="nav-item dropdown">
-                <router-link v-if="isLoggedIn()" to="/favorites">Favorites</router-link>
+              <li>
+                <router-link  v-if="isLoggedIn()" to="/favorites">Favorites</router-link>
               </li>
-              <li class="nav-item dropdown">
-                <router-link v-if="isLoggedIn()" to="/recipes">Recipe Search</router-link>
+              <li>
+                <router-link  v-if="isLoggedIn()" to="/recipes">Recipe Search</router-link>
               </li>
-              <li class="nav-item dropdown">
-                <router-link v-if="!isLoggedIn()" to="/login">Login</router-link>
+              <li>
+                <router-link  v-if="!isLoggedIn()" to="/login">Login</router-link>
               </li>
-              <li class="nav-item dropdown">
-                <router-link v-if="!isLoggedIn()" to="/signup">Sign up</router-link>
+              <li>
+                <router-link  v-if="!isLoggedIn()" to="/">Sign up</router-link>
               </li>
-              <li class="nav-item dropdown">
-                <router-link v-if="isLoggedIn()" to="/users/:id">Account</router-link>
+              <li>
+                <router-link  v-if="isLoggedIn()" to="/users/:id">Account</router-link>
               </li>
-              <li class="nav-item dropdown">
-                <router-link v-if="isLoggedIn()" to="/logout">Logout</router-link>
+              <li>
+                <router-link  v-if="isLoggedIn()" to="/logout">Logout</router-link>
               </li>
             </ul>
           </div>

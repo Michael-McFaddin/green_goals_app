@@ -1,39 +1,6 @@
 <template>
   <div class="categories-show">
 
-    <!-- Page Tittle Start -->
-    <!-- <section class="page-tittle page-tittle-lg bg dark-overlay" style="background-image: url('assets/images/bg-18.jpg')">
-      <div class="container">
-        <div class="page-tittle-head">
-          <h2>Stactic Background</h2>
-          <p>Subtittle Goes Here</p>
-        </div>
-          <ol class="breadcrumb pull-right mrg-top-30">
-          <li class="breadcrumb-item"><a href="#">Features</a></li>
-          <li class="breadcrumb-item"><a href="#">Page Tittle</a></li>
-          <li class="breadcrumb-item active">Stactic Background</li>
-        </ol>
-      </div>
-    </section> -->
-    <!-- Page Tittle End -->
-
-    <!-- Page Tittle Start -->
-    <!-- <section class="page-tittle page-tittle-sm">
-      <div class="container">
-        <div class="page-tittle-head">
-          <h2>{{ category.name }}</h2>
-          <p>Subtittle Goes Here</p>
-        </div>
-          <ol class="breadcrumb pull-right mrg-top-30">
-            <li class="breadcrumb-item"><a href="#">Features</a></li>
-            <li class="breadcrumb-item"><a href="#">Page Tittle</a></li>
-            <li class="breadcrumb-item"><a href="#">Size</a></li>
-            <li class="breadcrumb-item active">Page Tittle Medium</li>
-          </ol>
-      </div>
-    </section> -->
-    <!-- Page Tittle End -->
-
     <section class="page-tittle page-tittle-sm bg-white">
       <div class="container">               
         <div class="page-tittle-head display-block text-center">
@@ -60,39 +27,41 @@
     <!-- Blog list full width -->
     <!-- <section class="section-1"> -->
      <div class="container">
-      <div class="blog blog-list" v-for="post in orderBy(filterBy(category.posts, titleFilter, 'title'), 'id', sortById).slice(0, `${showNum}`)">
-        <div class="blog-item">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="blog-media">
-                <router-link v-bind:to="`/posts/${post.id}`"><img class="img-responsive" v-bind:src="post.image" alt=""></router-link>
+      <transition-group mode="out-in" enter-active-class="animate__animated animate__fadeIn" leave-active-class="animate__animated animate__fadeOut">
+        <div v-bind:key="post.id" class="blog blog-list" v-for="post in orderBy(filterBy(category.posts, titleFilter, 'title'), 'id', sortById).slice(0, `${showNum}`)">
+          <div class="blog-item">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="blog-media">
+                  <router-link v-bind:to="`/posts/${post.id}`"><img class="img-responsive" v-bind:src="post.image" alt=""></router-link>
+                </div>
               </div>
-            </div>
-            <div class="col-md-8">
-              <div class="blog-content">
-                <h3 class="blog-tittle"><router-link v-bind:to="`/posts/${post.id}`">{{ post.title }}</router-link></h3>
-                <div class="blog-meta">
-                  <span class="author">By <a class="theme-color">{{ post.user_name }}</a></span>
-                  <span class="date">Created: {{ relativeDate(post.created_at) }}</span>
-                  <h4 class="blog-meta author">Category: {{ category.name }}</h4>
+              <div class="col-md-8">
+                <div class="blog-content">
+                  <h3 class="blog-tittle"><router-link v-bind:to="`/posts/${post.id}`">{{ post.title }}</router-link></h3>
+                  <div class="blog-meta">
+                    <span class="author">By <a class="theme-color">{{ post.user_name }}</a></span>
+                    <span class="date">Created: {{ relativeDate(post.created_at) }}</span>
+                    <h4 class="blog-meta author">Category: {{ category.name }}</h4>
+                  </div>
+                  <div >
+                    <p class="blog-article" v-if="post.body.length > 300" v-html="`${post.body.slice(0, 300)}.....`"></p>
+                    <p class="blog-article" v-else v-html="post.body"></p>
+                  </div>
+                  <!-- <p v-if="post.body.length > 300" class="blog-article">{{ post.body.slice(0, 300) }}...</p>
+                  <p v-else class="blog-article">{{ post.body }}</p> -->
+                  <div class="blog-action">
+                    <span></span>
+                  </div>
+                  <div class="continue-reading">
+                    <router-link class="btn btn-dark-inverse" v-bind:to="`/posts/${post.id}`"><i class="ei ei-right-arrow"></i></router-link>
+                  </div>      
                 </div>
-                <div >
-                  <p class="blog-article" v-if="post.body.length > 300" v-html="`${post.body.slice(0, 300)}.....`"></p>
-                  <p class="blog-article" v-else v-html="post.body"></p>
-                </div>
-                <!-- <p v-if="post.body.length > 300" class="blog-article">{{ post.body.slice(0, 300) }}...</p>
-                <p v-else class="blog-article">{{ post.body }}</p> -->
-                <div class="blog-action">
-                  <span></span>
-                </div>
-                <div class="continue-reading">
-                  <router-link class="btn btn-dark-inverse" v-bind:to="`/posts/${post.id}`"><i class="ei ei-right-arrow"></i></router-link>
-                </div>      
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </transition-group>
       <div class="text-center mrg-top-50">
         <button class="btn btn-dark btn-md" v-on:click="showMore()">Show More</button>
       </div>

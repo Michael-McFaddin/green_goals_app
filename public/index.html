@@ -6,22 +6,16 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" rel="stylesheet">
+
     
     <!-- Favicon -->
     <link rel="shortcut icon" href="/assets/images/logo/green_goals_favicon2.png">
     
     <!-- Plugins CSS -->
     <link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.min.css" />
-    <!-- <link rel="stylesheet" href="/assets/plugins/magnific-popup/css/magnific-popup.css" /> -->
-    <!-- <link rel="stylesheet" href="/assets/plugins/swiper/css/swiper.css" /> -->
-    <!-- <link rel="stylesheet" href="/assets/plugins/youtube-player/css/YTPlayer.css" /> -->
-    
-    <!-- Revolution Slider CSS -->
-    <!-- <link rel="stylesheet" href="/assets/plugins/rs-plugin/revolution/css/settings.css" />rem -->
-    <!-- <link rel="stylesheet" href="/assets/plugins/rs-plugin/revolution/css/navigation.css" /> -->
     
     <!-- CSS -->
-    <!-- <link rel="stylesheet" href="/assets/css/animate.min.css" /> -->
     <link rel="stylesheet" href="/assets/css/ei-icon.css" />
     <link rel="stylesheet" href="/assets/css/main.css" />
     
@@ -49,132 +43,8 @@
     <!-- Jquery Plugins -->
     <script type="text/javascript" src="/assets/js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <!-- <script type="text/javascript" src="/assets/plugins/smoothscroll/smoothscroll.js"></script> -->
     <script type="text/javascript" src="/assets/plugins/easing/jquery.easing.1.3.js"></script>
-    <!-- <script type="text/javascript" src="/assets/plugins/wow/wow.min.js"></script> -->
-    <!-- <script type="text/javascript" src="/assets/plugins/counter-up/waypoints.min.js"></script> -->
-    <!-- <script type="text/javascript" src="/assets/plugins/counter-up/jquery.counterup.min.js"></script> -->
-    <!-- <script type="text/javascript" src="/assets/plugins/imagesloaded/imagesloaded.pkgd.min.js"></script> -->
-    <!-- <script type="text/javascript" src="/assets/plugins/isotope/isotope.pkgd.min.js"></script> -->
-    <!-- <script type="text/javascript" src="/assets/plugins/magnific-popup/js/jquery.magnific-popup.min.js"></script> -->
-    <!-- <script type="text/javascript" src="/assets/plugins/youtube-player/js/jquery.mb.YTPlayer.js"></script> -->
-    <!-- <script type="text/javascript" src="/assets/plugins/swiper/js/swiper.min.js"></script> -->
-    <!-- <script type="text/javascript" src="/assets/plugins/parallax-scroll-master/jquery.parallax-scroll.js"></script> -->
     <script type="text/javascript" src="/assets/plugins/validation/jquery.validate.min.js"></script>
-    
-    <!--[if lt IE 9]>
-    <script src="/assets/plugins/ie/html5shiv.js"></script>
-    <script src="/assets/plugins/ie/respond.min.js"></script>
-    <![endif]-->
-    
-    <!-- Revolution Slider Plugins -->
-    <!-- <script type="text/javascript" src="/assets/plugins/rs-plugin/revolution/js/jquery.themepunch.revolution.min.js"></script> -->
-    <!-- <script type="text/javascript" src="/assets/plugins/rs-plugin/revolution/js/jquery.themepunch.tools.min.js"></script> -->
-    
-    <!-- Revolution Slider Plugins Extension (you can remove this part when item on live server) -->
-    <!-- <script type="text/javascript" src="/assets/plugins/rs-plugin/revolution/js/extensions/revolution.extension.video.min.js"></script> -->
-    <!-- <script type="text/javascript" src="/assets/plugins/rs-plugin/revolution/js/extensions/revolution.extension.slideanims.min.js"></script> -->
-    <!-- <script type="text/javascript" src="/assets/plugins/rs-plugin/revolution/js/extensions/revolution.extension.actions.min.js"></script> -->
-    <!-- <script type="text/javascript" src="/assets/plugins/rs-plugin/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script> -->
-    <!-- <script type="text/javascript" src="/assets/plugins/rs-plugin/revolution/js/extensions/revolution.extension.kenburn.min.js"></script> -->
-    <!-- <script type="text/javascript" src="/assets/plugins/rs-plugin/revolution/js/extensions/revolution.extension.navigation.min.js"></script> -->
-    <!-- <script type="text/javascript" src="/assets/plugins/rs-plugin/revolution/js/extensions/revolution.extension.migration.min.js"></script> -->
-    <!-- <script type="text/javascript" src="/assets/plugins/rs-plugin/revolution/js/extensions/revolution.extension.parallax.min.js"></script> -->
-        
-    <!-- Revolution Slider setting -->
-    <!-- <script type="text/javascript">
-    var tpj = jQuery;
-  
-    var revapi8;
-    tpj(document).ready(function() {
-      if (tpj("#rev_slider_8_1").revolution == undefined) {
-        revslider_showDoubleJqueryError("#rev_slider_8_1");
-      } else {
-        revapi8 = tpj("#rev_slider_8_1").show().revolution({
-          sliderType: "standard",
-          jsFileLocation: "../../revolution/js/",
-          sliderLayout: "auto",
-          responsiveLevels: [1199, 992, 768, 480],
-          dottedOverlay: "none",
-          delay: 9000,
-          navigation: {
-            keyboardNavigation: "on",
-            keyboard_direction: "horizontal",
-            mouseScrollNavigation: "off",
-            onHoverStop: "off",
-            touch: {
-              touchenabled: "on",
-              swipe_threshold: 75,
-              swipe_min_touches: 1,
-              swipe_direction: "horizontal",
-              drag_block_vertical: false
-            },
-            arrows: {       
-              enable: false             
-            },
-            bullets: {
-              enable: false
-            },
-            tabs: {
-              style: "hebe",
-              enable: true,
-              width: 200,
-              height: 80,
-              min_width: 200,
-              wrapper_padding: 0,
-              wrapper_color: "",
-              wrapper_opacity: "0",
-              tmp: '<div class="tab-head">{{param1}}</div><div class="tab-sub">{{title}}</div>',
-              visibleAmount: 4,
-              hide_onmobile: true,
-              hide_under: 776,
-              hide_onleave: false,
-              hide_delay: 200,
-              direction: "vertical",
-              span: false,
-              position: "inner",
-              space: 0,
-              h_align: "right",
-              v_align: "center",
-              h_offset: 100,
-              v_offset: 0
-            }
-          },
-          parallax: {
-            type:"scroll",
-            origo:"enterpoint",
-            speed:400,
-            levels:[5,10,15,20,25,30,35,40,45,46,47,48,49,50,51,55],
-            type:"scroll",
-            disable_onmobile:"on"
-          },
-          gridwidth: 800,
-          gridheight: 600,
-          lazyType: "single",
-          shadow: 0,
-          spinner: "off",
-          shuffle: "off",
-          autoHeight: "off",
-          disableProgressBar: "on",
-          hideThumbsOnMobile: "off",
-          hideSliderAtLimit: 0,
-          hideCaptionAtLimit: 0,
-          hideAllCaptionAtLilmit: 0,
-          debugMode: false,
-          fallbacks: {
-            simplifyAll: "off",
-            nextSlideOnWindowFocus: "off",
-            disableFocusListener: false,
-          }
-        });
-      }
-    });
-    </script> -->
-         
-    <!-- Java Scripts -->
-    <!-- <script type="text/javascript" src="/assets/js/google-map.js"></script>
-         <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>-->
-    <!-- <script type="text/javascript" src="/assets/js/email.js"></script> -->
     <script type="text/javascript" src="/assets/js/main.js"></script>
   </body>
 </html>

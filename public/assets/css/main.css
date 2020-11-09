@@ -4102,7 +4102,7 @@ section {
 	}
 }
 
-.header .nav-tools .cart-menu {
+/* .header .nav-tools .cart-menu {
 	min-width: 300px;
 	padding: 20px;
 	right: 0;
@@ -4320,7 +4320,7 @@ section {
 		line-height: 50px;
 		height: 50px;
 	}
-}
+} */
 
 .header .navbar-toggle {
 	position: relative;
@@ -4622,7 +4622,7 @@ section {
 --------- 5. Side Headers ---------
 ---------------------------------*/
 
-.side-header .nav > li > a:focus,
+/* .side-header .nav > li > a:focus,
 .side-header .nav > li > a:hover {
 	text-decoration: none;
 	background-color: transparent;
@@ -4928,7 +4928,7 @@ section {
 	-moz-transform: rotate(-45deg);
 	-o-transform: rotate(-45deg);
 	-ms-transform: rotate(-45deg);
-}
+} */
 
 .wrapper {
 	position: relative;

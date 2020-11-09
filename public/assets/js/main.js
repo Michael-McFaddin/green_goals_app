@@ -45,7 +45,7 @@ var Eastern = (function() {
 	var headerMobile = function() {
 		$(window).on('load resize', function() {
 			if ($(window).width() < 992) {
-				$('.header .navbar-collapse ul.navbar-nav li a').on('click', function(
+				$('.header .navbar-collapse ul.navbar-nav li a router-link').on('click', function(
 					event
 				) {
 					if (
