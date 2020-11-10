@@ -88,7 +88,6 @@ export default {
       .get("/api/favorites")
       .then(response => {
         this.favorites = response.data;
-        console.log(response.data);
       });
   },
 
@@ -97,7 +96,6 @@ export default {
       axios
         .delete(`/api/favorites/${favorite.id}`)
         .then(response => {
-          console.log("Favorite Deleted", response.data);
           var index = this.favorites.indexOf(favorite);
           this.favorites.splice(index, 1);
         });

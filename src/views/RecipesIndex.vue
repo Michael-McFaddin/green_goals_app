@@ -85,7 +85,6 @@ export default {
         .get(`/api/recipes?diet=${this.dietInput}&dish=${this.dishInput}`)
         .then(response => {
           this.recipes = response.data;
-          console.log(response.data);
         });
     }
   }

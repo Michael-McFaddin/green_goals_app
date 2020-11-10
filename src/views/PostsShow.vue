@@ -47,7 +47,6 @@ export default {
   created: function() {
     axios.get("api/posts/" + this.$route.params.id).then((response) => {
       this.post = response.data;
-      console.log(response.data);
     });
   },
 
@@ -57,7 +56,6 @@ export default {
         post_id: this.post.id,
       };
       axios.post("/api/favorites", params).then((response) => {
-        console.log("You Favorited this post.");
         this.post.favorite = true;
       });
     },

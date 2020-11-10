@@ -118,7 +118,6 @@ export default {
           this.$router.push(`/posts/${response.data.id}`);
         })
         .catch(error => {
-          console.log(error.response);
           this.errors = error.response.data.errors;
         });
     }

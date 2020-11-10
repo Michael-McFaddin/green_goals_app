@@ -96,7 +96,6 @@ export default {
       .get(`/api/categories/${this.$route.params.id}`)
       .then(response => {
         this.category = response.data;
-        console.log(response.data);
       });
   },
 

@@ -66,7 +66,6 @@ export default {
       .get(`/api/users/${this.$route.params.id}`)
       .then(response => {
         this.user = response.data;
-        console.log(response.data);
       });
   },
 
